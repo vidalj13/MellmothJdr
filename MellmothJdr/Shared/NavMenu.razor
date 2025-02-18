@@ -1,11 +1,7 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">blazor-google-auth</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿@using System.Security.Claims
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ILogger<NavMenu> Logger;
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
@@ -24,10 +20,53 @@
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
             </NavLink>
         </div>
+        <div class="nav-item px-3">
+            @if (User.Identity?.Name != null)
+            {
+                <NavLink class="nav-link" href="/Identity/Logout">
+                    <span class="oi" aria-hidden="true">
+                        <MudAvatar Size="Size.Small">
+                            <MudImage Src="@Avatar"></MudImage>
+                        </MudAvatar>
+                    </span>
+                    Déconnection
+                </NavLink>
+            }
+            else
+            {
+                <NavLink class="nav-link" href="/Identity/Login">
+                    <span class="oi" aria-hidden="true">
+                        <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Title="Connection" />
+                    </span>Connection
+                </NavLink>
+            }
+        </div>
+
     </nav>
 </div>
 
 @code {
+    private ClaimsPrincipal User;
+    private string Avatar;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        try
+        {
+            User = (await AuthenticationStateProvider.GetAuthenticationStateAsync()).User;
+
+
+
+            var avatar = User.FindFirst("urn:google:image");
+            Avatar = avatar != null ? avatar.Value : "";
+        }
+        catch (Exception e)
+        {
+            Logger.LogError(e, "Failed to resolve the authenticated user");
+        }
+    }
+
     private bool collapseNavMenu = true;
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
