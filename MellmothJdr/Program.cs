@@ -1,29 +1,36 @@
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-
-using MudBlazor.Services;
+using MellmothJdr.Components;
 
 namespace MellmothJdr
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
-            var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("#app");
-            builder.RootComponents.Add<HeadOutlet>("head::after");
+            var builder = WebApplication.CreateBuilder(args);
 
-            IServiceCollection services = builder.Services;
-            AddServices(services, new Uri(builder.HostEnvironment.BaseAddress));
+            // Add services to the container.
+            builder.Services.AddRazorComponents()
+                .AddInteractiveServerComponents();
 
-            await builder.Build().RunAsync();
-        }
+            var app = builder.Build();
 
-        private static void AddServices(IServiceCollection services, Uri baseAddress)
-        {
-            services.AddScoped(sp => new HttpClient { BaseAddress = baseAddress });
-            services.AddMudServices();
+            // Configure the HTTP request pipeline.
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
 
+            app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
+            app.UseAntiforgery();
+
+            app.MapRazorComponents<App>()
+                .AddInteractiveServerRenderMode();
+
+            app.Run();
         }
     }
 }

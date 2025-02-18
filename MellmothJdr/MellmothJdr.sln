@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MellmothJdr", "MellmothJdr.csproj", "{5DF65D63-D817-4A8A-97C3-A6DBD2C084AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MellmothJdr", "MellmothJdr.csproj", "{8D7ED24C-AF81-4ADE-9CE7-F6939E298EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5DF65D63-D817-4A8A-97C3-A6DBD2C084AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DF65D63-D817-4A8A-97C3-A6DBD2C084AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DF65D63-D817-4A8A-97C3-A6DBD2C084AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DF65D63-D817-4A8A-97C3-A6DBD2C084AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7ED24C-AF81-4ADE-9CE7-F6939E298EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7ED24C-AF81-4ADE-9CE7-F6939E298EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7ED24C-AF81-4ADE-9CE7-F6939E298EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7ED24C-AF81-4ADE-9CE7-F6939E298EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CB725D24-EF57-4756-8754-D540D0BE3D09}
+		SolutionGuid = {C37C1AAF-15F3-45E7-8F10-2FB263ADCF18}
 	EndGlobalSection
 EndGlobal
