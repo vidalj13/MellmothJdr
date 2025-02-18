@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 
-namespace MellmothJdr.Pages
+namespace MellmothJdr.BlazorBase.Pages
 {
     [Authorize]
     public class AuthenticatedPage : ComponentBase
