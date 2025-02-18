@@ -1,10 +1,10 @@
 ﻿@page "/fetchdata"
 @using MellmothJdr.Data
-@inject WeatherForecastService ForecastService
+@inherits FetchDataPage
 
-<PageTitle>Weather forecast</PageTitle>
+<PageTitle>FetchDataPage</PageTitle>
 
-<h1>Weather forecast</h1>
+<h1>FetchDataPage</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
@@ -37,14 +37,4 @@ else
         }
         </tbody>
     </table>
-}
-
-@code {
-    private WeatherForecast[]? forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
-    }
-
 }

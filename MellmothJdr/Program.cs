@@ -12,6 +12,8 @@ builder.Services
     .AddServerSideBlazor().Services
     .AddSingleton<WeatherForecastService>()
     .AddMudServices()
+    .AddCascadingAuthenticationState()
+    .AddAuthorizationCore()
     .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie().Services
         .AddAuthentication()
             .AddGoogle(options =>

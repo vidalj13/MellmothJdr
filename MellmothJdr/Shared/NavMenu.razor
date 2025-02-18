@@ -5,24 +5,24 @@
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            @if (User.Identity?.Name != null)
-            {
+        @if (User.Identity?.Name != null)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> Home
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="counter">
+                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="fetchdata">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
                 <NavLink class="nav-link" href="/Identity/Logout">
                     <span class="oi" aria-hidden="true">
                         <MudAvatar Size="Size.Small">
@@ -31,16 +31,18 @@
                     </span>
                     Déconnection
                 </NavLink>
-            }
-            else
-            {
+            </div>
+        }
+        else
+        {
+            <div class="nav-item px-3">
                 <NavLink class="nav-link" href="/Identity/Login">
                     <span class="oi" aria-hidden="true">
                         <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Title="Connection" />
                     </span>Connection
                 </NavLink>
-            }
-        </div>
+            </div>
+        }
 
     </nav>
 </div>
