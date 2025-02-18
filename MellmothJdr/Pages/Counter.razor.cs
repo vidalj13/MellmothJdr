@@ -1,4 +1,6 @@
-﻿namespace MellmothJdr.Pages;
+﻿using MellmothJdr.BlazorBase.Pages;
+
+namespace MellmothJdr.Pages;
 
 public class CounterPage : AuthenticatedPage
 {

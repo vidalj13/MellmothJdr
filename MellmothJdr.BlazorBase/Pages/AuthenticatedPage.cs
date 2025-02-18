@@ -11,6 +11,7 @@ namespace MellmothJdr.BlazorBase.Pages
         public NavigationManager Navigation { get; set; }
         [Inject]
         public AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        protected Guid? IdUserInterne;
         protected override async Task OnInitializedAsync()
         {
             AuthenticationState authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -20,6 +21,8 @@ namespace MellmothJdr.BlazorBase.Pages
             {
                 Navigation.NavigateTo("Identity/Login", true);
             }
+            var claim = user.FindFirst("IdUserInterne");
+            IdUserInterne = Guid.Parse(claim?.Value);
         }
     }
 }

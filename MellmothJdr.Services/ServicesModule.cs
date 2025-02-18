@@ -12,7 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
             int _dbConnectionMaxRetryDelay = 1)
         {
             services
-
+                .AddScoped<IUsersService, UsersService>()
                 .AddScoped<IWeatherForecastService, WeatherForecastService>()
                 .AddDAL(connectionString,
                             _dbConnectionMaxRetryCount,

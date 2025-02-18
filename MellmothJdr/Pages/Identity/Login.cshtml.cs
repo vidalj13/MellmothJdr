@@ -1,6 +1,12 @@
+using System.Security.Claims;
+
+using MellmothJdr.Services.IServices;
+using MellmothJdr.Services.Services;
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -9,6 +15,11 @@ namespace MellmothJdr.Pages.Identity;
 [AllowAnonymous]
 public class Login : PageModel
 {
+    public Login(IUsersService usersService) : base()
+    {
+        _usersService = usersService;
+    }
+    private IUsersService _usersService { get; set; }
     public IActionResult OnGetAsync(string? returnUrl = null)
     {
         return new ChallengeResult("Google", new()
@@ -25,15 +36,22 @@ public class Login : PageModel
         var user = User.Identities.FirstOrDefault();
         if (!(user?.IsAuthenticated ?? false))
             return LocalRedirect("/");
+        string email = user.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress").Value;
+        Guid userId = await _usersService.AddUserIfNotExistsAsync(new NotificationManager.Infrastructure.Entities.User()
+        {
+            ExterneId = email
+        });
 
+        AuthenticationProperties properties = new()
+        {
+            IsPersistent = true,
+            RedirectUri = Request.Host.Value,
+        };
+        user.AddClaim(new Claim("IdUserInterne", userId.ToString()));
         await HttpContext.SignInAsync(
             CookieAuthenticationDefaults.AuthenticationScheme,
             new(user),
-            new()
-            {
-                IsPersistent = true,
-                RedirectUri = Request.Host.Value
-            });
+            properties);
 
         return LocalRedirect("/");
     }

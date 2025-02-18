@@ -1,7 +1,7 @@
 ﻿@using System.Security.Claims
+@using MellmothJdr.Shared
 
-@inject AuthenticationStateProvider AuthenticationStateProvider
-@inject ILogger<NavMenu> Logger;
+@inherits NavMenuComponent;
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
@@ -46,36 +46,3 @@
 
     </nav>
 </div>
-
-@code {
-    private ClaimsPrincipal User;
-    private string Avatar;
-
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        try
-        {
-            User = (await AuthenticationStateProvider.GetAuthenticationStateAsync()).User;
-
-
-
-            var avatar = User.FindFirst("urn:google:image");
-            Avatar = avatar != null ? avatar.Value : "";
-        }
-        catch (Exception e)
-        {
-            Logger.LogError(e, "Failed to resolve the authenticated user");
-        }
-    }
-
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
-}
