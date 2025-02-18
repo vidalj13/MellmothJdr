@@ -1,15 +1,18 @@
-namespace MellmothJdr.Data;
+using MellmothJdr.Services.Dto;
+using MellmothJdr.Services.IServices;
 
-public class WeatherForecastService
+namespace MellmothJdr.Services.Services;
+
+public class WeatherForecastService : IWeatherForecastService
 {
     private static readonly string[] Summaries =
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    public Task<WeatherForecast[]> GetForecastAsync(DateOnly startDate)
+    public Task<WeatherForecastDto[]> GetForecastAsync(DateOnly startDate)
     {
-        return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecastDto
         {
             Date = startDate.AddDays(index),
             TemperatureC = Random.Shared.Next(-20, 55),

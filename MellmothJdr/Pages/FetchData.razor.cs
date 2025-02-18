@@ -1,6 +1,5 @@
-﻿using MellmothJdr.Data;
-
-using Microsoft.AspNetCore.Authorization;
+﻿using MellmothJdr.Services.Dto;
+using MellmothJdr.Services.IServices;
 using Microsoft.AspNetCore.Components;
 
 namespace MellmothJdr.Pages;
@@ -8,9 +7,9 @@ namespace MellmothJdr.Pages;
 public class FetchDataPage : AuthenticatedPage
 {
     [Inject]
-    public WeatherForecastService ForecastService { get; set; }
+    public IWeatherForecastService ForecastService { get; set; }
 
-    protected WeatherForecast[]? forecasts;
+    protected WeatherForecastDto[] forecasts;
 
     protected override async Task OnInitializedAsync()
     {

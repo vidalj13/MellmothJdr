@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MellmothJdr.BlazorBase\MellmothJdr.BlazorBase.csproj" />
+      <ProjectReference Include="..\MellmothJdr.Services\MellmothJdr.Services.csproj" />
     </ItemGroup>
 
 </Project>

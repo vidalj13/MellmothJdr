@@ -1,8 +1,9 @@
-using MellmothJdr.Data;
 using MellmothJdr;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using MudBlazor.Services;
+using MellmothJdr.Services.Services;
+using MellmothJdr.Services.IServices;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddRazorPages().Services
     .AddServerSideBlazor().Services
-    .AddSingleton<WeatherForecastService>()
+    .AddScoped<IWeatherForecastService, WeatherForecastService>()
     .AddMudServices()
     .AddCascadingAuthenticationState()
     .AddAuthorizationCore()
