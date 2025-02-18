@@ -1,36 +1,38 @@
-using MellmothJdr.Components;
+using BlazorGoogleAuth.Data;
+using BlazorGoogleAuth;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
-namespace MellmothJdr
-{
-    public class Program
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services
+    .AddRazorPages().Services
+    .AddServerSideBlazor().Services
+    .AddSingleton<WeatherForecastService>()
+    .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie().Services
+    .AddAuthentication()
+    .AddGoogle(options =>
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        options.ClientId = "18269906175-ca1ocgh56uf49evqh9im1cbv55p3uci0.apps.googleusercontent.com";
+        options.ClientSecret = "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";
+        options.Scope.Add("email");
+        options.ClaimActions.MapJsonKey("urn:google:image", "picture");    
+        options.SaveTokens = true;
+    });
 
-            // Add services to the container.
-            builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents();
+var app = builder.Build();
 
-            var app = builder.Build();
+if (!app.Environment.IsDevelopment())
+    app.UseExceptionHandler("/Error")
+        .UseHsts();
 
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+app.UseHttpsRedirection()
+    .UseStaticFiles()
+    .UseCookiePolicy()
+    .UseAuthentication()
+    .UseRouting();
+    
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
 
-            app.UseHttpsRedirection();
-
-            app.UseStaticFiles();
-            app.UseAntiforgery();
-
-            app.MapRazorComponents<App>()
-                .AddInteractiveServerRenderMode();
-
-            app.Run();
-        }
-    }
-}
+await app.RunAsync().ConfigureAwait(false);
