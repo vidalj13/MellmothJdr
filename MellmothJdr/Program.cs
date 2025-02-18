@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
+using MudBlazor.Services;
+
 namespace MellmothJdr
 {
     public class Program
@@ -11,9 +13,17 @@ namespace MellmothJdr
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            IServiceCollection services = builder.Services;
+            AddServices(services, new Uri(builder.HostEnvironment.BaseAddress));
 
             await builder.Build().RunAsync();
+        }
+
+        private static void AddServices(IServiceCollection services, Uri baseAddress)
+        {
+            services.AddScoped(sp => new HttpClient { BaseAddress = baseAddress });
+            services.AddMudServices();
+
         }
     }
 }
