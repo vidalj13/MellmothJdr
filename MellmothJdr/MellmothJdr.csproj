@@ -4,12 +4,13 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>BlazorGoogleAuth</RootNamespace>
+        <RootNamespace>MellmothJdr</RootNamespace>
         <UserSecretsId>6dca2540-2969-4241-bb4c-854366fdcd2d</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.0" />
+        <PackageReference Include="MudBlazor" Version="8.2.0" />
     </ItemGroup>
 
 </Project>

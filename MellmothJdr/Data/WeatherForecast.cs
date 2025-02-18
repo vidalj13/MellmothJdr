@@ -1,4 +1,4 @@
-namespace BlazorGoogleAuth.Data;
+namespace MellmothJdr.Data;
 
 public class WeatherForecast
 {

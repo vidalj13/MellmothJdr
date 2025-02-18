@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BlazorGoogleAuth.Pages.Identity;
+namespace MellmothJdr.Pages.Identity;
 
 [AllowAnonymous]
 public class Login : PageModel

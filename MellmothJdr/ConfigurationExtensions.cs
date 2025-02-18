@@ -1,4 +1,4 @@
-namespace BlazorGoogleAuth;
+namespace MellmothJdr;
 
 public static class ConfigurationExtensions
 {
