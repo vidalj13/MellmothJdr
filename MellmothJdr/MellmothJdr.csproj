@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MellmothJdr.BlazorBase\MellmothJdr.BlazorBase.csproj" />
+      <ProjectReference Include="..\MellmothJdr.Commun\MellmothJdr.Commun.csproj" />
       <ProjectReference Include="..\MellmothJdr.Services\MellmothJdr.Services.csproj" />
     </ItemGroup>
 

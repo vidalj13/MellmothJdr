@@ -1,0 +1,17 @@
+Pré-requis :
+- Installer le SDK .NET 8
+- Installer dotnet-ef via la commande : dotnet tool install --global dotnet-ef
+
+Commande à lancer en power shell dans le dossier du fichier contenant le  .sln
+
+//Adds a new migration.
+dotnet ef migrations add NAME --project MellmothJdr.DAL --context MigrationContext
+
+//Removes the last migration.
+dotnet ef migrations remove NAME --project MellmothJdr.DAL --context MigrationContext
+
+//Add "SQL" folder
+New-Item -Path . -Name "SQL" -ItemType "directory"
+
+//Genere le bundle de migration
+dotnet ef migrations bundle --project MellmothJdr.DAL --verbose --target-runtime win-x64 --self-contained --output ./SQL/bundle.exe --force --context MigrationContext
