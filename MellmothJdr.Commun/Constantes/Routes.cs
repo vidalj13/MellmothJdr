@@ -11,5 +11,7 @@ namespace MellmothJdr.Commun.Constantes
         public const string Home = "/Home";
         public const string Logout = "/Identity/Logout";
         public const string Login = "/Identity/Login";
+        public const string DnDHome = "/dnd/home";
+        public const string ChroniquesOubliesHome = "/ChroniquesOublies/home";
     }
 }

@@ -1,27 +1,21 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
+﻿using System.Security.Claims;
+
+using Microsoft.AspNetCore.Authorization;
 
 namespace MellmothJdr.BlazorBase.Pages
 {
     [Authorize]
-    public class AuthenticatedPage : ComponentBase
+    public class AuthenticatedPage : AuthenticatedPartialPage
     {
-        [Inject]
-        public NavigationManager Navigation { get; set; }
-        [Inject]
-        public AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         protected Guid? IdUserInterne;
         protected override async Task OnInitializedAsync()
         {
-            AuthenticationState authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            System.Security.Claims.ClaimsPrincipal user = authState.User;
-
-            if (user == null || !user.Identity.IsAuthenticated)
+            await base.OnInitializedAsync();
+            if (!IsAuthenticated)
             {
                 Navigation.NavigateTo("Identity/Login", true);
             }
-            var claim = user.FindFirst("IdUserInterne");
+            Claim claim = User.FindFirst("IdUserInterne");
             IdUserInterne = Guid.Parse(claim?.Value);
         }
     }

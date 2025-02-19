@@ -12,18 +12,37 @@
 <!-- Menu latéral -->
 <MudDrawer @bind-Open="_drawerOpen" Clipped="true" Elevation="1" Variant="DrawerVariant.Responsive">
     <MudNavMenu>
-        
+        <MudNavLink Href="@(Routes.Home)">
+            <MudAvatar Size="Size.Small">
+                <MudImage Src="/img/icon/home.png"></MudImage>
+            </MudAvatar> Accueil
+        </MudNavLink>
+        <MudNavLink Href="@(Routes.DnDHome)"><MudAvatar Size="Size.Small">
+                <MudImage Src="/img/icon/dnd.png"></MudImage>
+        </MudAvatar> D&D</MudNavLink>
+        <MudNavLink Href="@(Routes.ChroniquesOubliesHome)">
+            <MudAvatar Size="Size.Small">
+                <MudImage Src="/img/icon/ChroniquesOublies.jpg"></MudImage>
+        </MudAvatar>Chroniques Oublies</MudNavLink>
         @if (User.Identity?.Name != null)
         {
-            <MudNavLink Href="@(Routes.Home)" Icon="@Icons.Material.Filled.House">Acceuil</MudNavLink>
-            <MudNavLink Href="counter" Icon="@Icons.Material.Filled.BugReport">Counter</MudNavLink>
-            <MudNavLink Href="fetchdata" Icon="@Icons.Material.Filled.DataThresholding">Fetch data</MudNavLink>
-            <MudNavLink Href="@(Routes.Logout)" Icon="@Icons.Material.Filled.PowerSettingsNew" IconColor="Color.Secondary">Déconnection</MudNavLink>
+            @* <MudNavLink Href="counter" Icon="@Icons.Material.Filled.BugReport">Counter</MudNavLink>
+            <MudNavLink Href="fetchdata" Icon="@Icons.Material.Filled.DataThresholding">Fetch data</MudNavLink> *@
+
+            <MudNavLink Href="@(Routes.Logout)">
+                <MudAvatar Size="Size.Small">
+                    <MudImage Src="@Avatar"></MudImage>
+                </MudAvatar> Déconnection
+            </MudNavLink>
+            
         }
         else
         {
-            <MudNavLink Href="@(Routes.Login)" Icon="@Icons.Material.Filled.PowerSettingsNew" IconColor="Color.Success">Connection</MudNavLink>
-            
+            <MudNavLink Href="@(Routes.Login)">
+                <MudAvatar Size="Size.Small">
+                    <MudImage Src="/img/icon/conection.jpg"></MudImage>
+                </MudAvatar> Connection
+            </MudNavLink>   
         }
     </MudNavMenu>
 </MudDrawer>
