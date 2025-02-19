@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 namespace MellmothJdr.BlazorBase.Pages
 {
     [Authorize]
-    public class AuthenticatedPartialPage : ComponentBase
+    public abstract class AuthenticatedPartialPage : ComponentBase
     {
         [Inject]
         public NavigationManager Navigation { get; set; }
@@ -15,9 +15,11 @@ namespace MellmothJdr.BlazorBase.Pages
         public AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         protected ClaimsPrincipal User { get; set; }
         protected bool IsAuthenticated { get; set; } = false;
+        protected bool IsReady { get; set; } = false;
 
         protected override async Task OnInitializedAsync()
         {
+            IsReady = false;
             AuthenticationState authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             User = authState.User;
 
@@ -25,6 +27,22 @@ namespace MellmothJdr.BlazorBase.Pages
             {
                 IsAuthenticated = true;
             }
+            StateHasChanged();
+            Load();
         }
+
+        protected virtual void Load()
+        {
+            Task.Run(() => {
+                LoadAsync().GetAwaiter().GetResult();
+                InvokeAsync(() =>
+                {
+                    IsReady = true;
+                    StateHasChanged();
+                });
+            });
+        }
+
+        protected abstract Task LoadAsync();
     }
 }

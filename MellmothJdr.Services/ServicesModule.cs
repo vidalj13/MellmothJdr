@@ -13,7 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services
                 .AddScoped<IUsersService, UsersService>()
-                .AddScoped<IWeatherForecastService, WeatherForecastService>()
+                .AddScoped<IJeuService, JeuService>()
                 .AddDAL(connectionString,
                             _dbConnectionMaxRetryCount,
                              _dbConnectionMaxRetryDelay);

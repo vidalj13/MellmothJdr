@@ -1,12 +1,21 @@
 ﻿@page "/ChroniquesOublies/home"
 @inherits ChroniquesOubliesHomePage
-<PageTitle>ChroniquesOublies</PageTitle>
 
-<h1>ChroniquesOublies</h1>
-
-ChroniquesOublies
-
-@if (IsAuthenticated)
+@if (IsReady)
 {
-    <span>Mes persos</span>
+    <PageTitle>@Jeu.Nom</PageTitle>
+    <h1>@Jeu.Nom</h1>
+
+    @Jeu.Description
+
+    @if (IsAuthenticated)
+    {
+        <span>Mes persos</span>
+    }
+
+}
+else
+{
+    <PageTitle>Chroniques Oublies</PageTitle>
+    <CustomLoader />
 }

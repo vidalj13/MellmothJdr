@@ -15,5 +15,6 @@ namespace NotificationManager.Infrastructure
         { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Jeu> Jeux { get; set; }
     }
 }

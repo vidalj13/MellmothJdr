@@ -1,31 +1,30 @@
 ﻿using MellmothJdr.Services.IServices;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 using NotificationManager.Infrastructure;
 using NotificationManager.Infrastructure.Entities;
 
 namespace MellmothJdr.Services.Services;
 
-public class UsersService : IUsersService
+public class UsersService : ServiceBase, IUsersService
 {
-    private BddContexte _contexte;
-
-    public UsersService(BddContexte contexte)
+    public UsersService(IServiceScopeFactory scopeFactory):base(scopeFactory)
     {
-        _contexte = contexte;
     }
 
     public async Task<Guid> AddUserIfNotExistsAsync(User user, CancellationToken cancellationToken = default)
     {
-        User old = await _contexte.Users.FirstOrDefaultAsync(x => x.ExterneId == user.ExterneId, cancellationToken);
+        using BddContexte contexte = GetScopedBddContexte();
+        User old = await contexte.Users.FirstOrDefaultAsync(x => x.ExterneId == user.ExterneId, cancellationToken);
         if(old != null)
         {
             return old.Id;
         }
 
-        await _contexte.Users.AddAsync(user, cancellationToken);
-        await _contexte.SaveBaseEntityChangesAsync(cancellationToken);
+        await contexte.Users.AddAsync(user, cancellationToken);
+        await contexte.SaveBaseEntityChangesAsync(cancellationToken);
         return user.Id;
     }
 }

@@ -1,12 +1,21 @@
 ﻿@page "/dnd/home"
 @inherits DnDHomePage
-<PageTitle>DnD</PageTitle>
 
-<h1>DnD</h1>
-
-Dnd
-
-@if (IsAuthenticated)
+@if (IsReady)
 {
-    <span>Mes persos</span>
+    <PageTitle>@Jeu.Nom</PageTitle>
+    <h1>@Jeu.Nom</h1>
+
+    @Jeu.Description
+
+    @if (IsAuthenticated)
+    {
+        <span>Mes persos</span>
+    }
+
+}
+else
+{
+    <PageTitle>DnD</PageTitle>
+    <CustomLoader/>
 }

@@ -8,6 +8,12 @@ namespace MellmothJdr.BlazorBase.Pages
     public class AuthenticatedPage : AuthenticatedPartialPage
     {
         protected Guid? IdUserInterne;
+
+        protected override Task LoadAsync()
+        {
+            return Task.CompletedTask;
+        }
+
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();

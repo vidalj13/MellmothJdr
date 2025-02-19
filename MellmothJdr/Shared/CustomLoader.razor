@@ -1,0 +1,20 @@
+﻿@using System.Security.Claims
+@using MellmothJdr.Shared
+
+@inherits CustomLoaderComponent;
+
+<div class="loader-overlay">
+        <MudOverlay Visible="true" DarkBackground="true" Absolute="true">
+    <MudProgressCircular Color="Color.Secondary" Indeterminate="true" />
+    </MudOverlay>
+</div>
+
+<style>
+    .loader-overlay {
+        margin-top: 72%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+</style>
