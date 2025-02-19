@@ -1,3 +1,4 @@
+using MellmothJdr.Commun.Constantes;
 using MellmothJdr.Commun.Settings;
 
 using Microsoft.AspNetCore.Authentication;
@@ -45,7 +46,15 @@ app.UseHttpsRedirection()
     .UseCookiePolicy()
     .UseAuthentication()
     .UseRouting();
+app.Use(async (context, next) =>
+{
+    await next();
 
+    if (context.Response.StatusCode == 404 && !context.Response.HasStarted)
+    {
+        context.Response.Redirect(Routes.Home);
+    }
+});
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 

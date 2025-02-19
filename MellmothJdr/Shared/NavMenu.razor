@@ -3,46 +3,27 @@
 
 @inherits NavMenuComponent;
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
+<!-- Barre de navigation --><MudAppBar Color="Color.Dark">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" OnClick="ToggleDrawer" Color="Color.Secondary" />
+    <MudSpacer />
+    <MudImage Src="/img/logo.jpg" Height="64"/>
+</MudAppBar>
+
+<!-- Menu latéral -->
+<MudDrawer @bind-Open="_drawerOpen" Clipped="true" Elevation="1" Variant="DrawerVariant.Responsive">
+    <MudNavMenu>
+        
         @if (User.Identity?.Name != null)
         {
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="oi oi-home" aria-hidden="true"></span> Home
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="fetchdata">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="/Identity/Logout">
-                    <span class="oi" aria-hidden="true">
-                        <MudAvatar Size="Size.Small">
-                            <MudImage Src="@Avatar"></MudImage>
-                        </MudAvatar>
-                    </span>
-                    Déconnection
-                </NavLink>
-            </div>
+            <MudNavLink Href="@(Routes.Home)" Icon="@Icons.Material.Filled.House">Acceuil</MudNavLink>
+            <MudNavLink Href="counter" Icon="@Icons.Material.Filled.BugReport">Counter</MudNavLink>
+            <MudNavLink Href="fetchdata" Icon="@Icons.Material.Filled.DataThresholding">Fetch data</MudNavLink>
+            <MudNavLink Href="@(Routes.Logout)" Icon="@Icons.Material.Filled.PowerSettingsNew" IconColor="Color.Secondary">Déconnection</MudNavLink>
         }
         else
         {
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="/Identity/Login">
-                    <span class="oi" aria-hidden="true">
-                        <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Title="Connection" />
-                    </span>Connection
-                </NavLink>
-            </div>
+            <MudNavLink Href="@(Routes.Login)" Icon="@Icons.Material.Filled.PowerSettingsNew" IconColor="Color.Success">Connection</MudNavLink>
+            
         }
-
-    </nav>
-</div>
+    </MudNavMenu>
+</MudDrawer>

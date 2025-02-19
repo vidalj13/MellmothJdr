@@ -1,3 +1,5 @@
+using MellmothJdr.Commun.Constantes;
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +11,7 @@ public class Logout(ILogger<Logout> logger) : PageModel
 {
     public async Task<IActionResult> OnGetAsync(string? returnUrl = null)
     {
-        returnUrl ??= Url.Content("~/");
+        returnUrl ??= Url.Content(Routes.Home);
 
         try
         {

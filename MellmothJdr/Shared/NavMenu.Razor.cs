@@ -13,6 +13,8 @@ public class NavMenuComponent : ComponentBase
     protected ClaimsPrincipal User;
     protected string Avatar;
 
+    protected bool _drawerOpen = true;
+
     protected bool collapseNavMenu = true;
 
     protected string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -32,5 +34,10 @@ public class NavMenuComponent : ComponentBase
         var avatar = User.FindFirst("urn:google:image");
         Avatar = avatar != null ? avatar.Value : "";
 
+    }
+
+    protected void ToggleDrawer()
+    {
+        _drawerOpen = !_drawerOpen;
     }
 }
