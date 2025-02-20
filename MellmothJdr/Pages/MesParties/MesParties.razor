@@ -1,0 +1,22 @@
+﻿@page "/game/{GameId:guid}/my-game"
+@inherits MesPartiesPage
+
+@if (IsReady)
+{
+    <PageTitle>Mes parties - @Jeu.Nom</PageTitle>
+    <h1>Mes parties - @Jeu.Nom</h1>
+    <div>
+    @Jeu.Description
+</div>
+    @if (IsAuthenticated)
+    {
+        <div>
+        </div>
+    }
+
+}
+else
+{
+    <PageTitle>Mes parties</PageTitle>
+    <CustomLoader />
+}

@@ -5,12 +5,18 @@
 {
     <PageTitle>@Jeu.Nom</PageTitle>
     <h1>@Jeu.Nom</h1>
-
+    <div>
     @Jeu.Description
-
+</div>
     @if (IsAuthenticated)
     {
-        <span>Mes persos</span>
+        <div>
+            <MudButton Href="@(Routes.MesGamesChroniquesOublies)"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary">
+                Mes Parties
+            </MudButton>
+        </div>
     }
 
 }
