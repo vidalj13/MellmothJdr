@@ -10,7 +10,7 @@ namespace MellmothJdr.Services.Services;
 
 public class UsersService : ServiceBase, IUsersService
 {
-    public UsersService(IServiceScopeFactory scopeFactory):base(scopeFactory)
+    public UsersService(IServiceScopeFactory scopeFactory) : base(scopeFactory)
     {
     }
 
@@ -18,7 +18,7 @@ public class UsersService : ServiceBase, IUsersService
     {
         using BddContexte contexte = GetScopedBddContexte();
         User old = await contexte.Users.FirstOrDefaultAsync(x => x.ExterneId == user.ExterneId, cancellationToken);
-        if(old != null)
+        if (old != null)
         {
             return old.Id;
         }

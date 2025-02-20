@@ -33,7 +33,8 @@ namespace MellmothJdr.BlazorBase.Pages
 
         protected virtual void Load()
         {
-            Task.Run(() => {
+            Task.Run(() =>
+            {
                 LoadAsync().GetAwaiter().GetResult();
                 InvokeAsync(() =>
                 {

@@ -1,9 +1,6 @@
-﻿using System.Security.Claims;
-
-using MellmothJdr.Commun.Constantes;
+﻿using MellmothJdr.Commun.Constantes;
 
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 namespace MellmothJdr.Shared;
 
 public class NotFoundRedirectComponent : ComponentBase

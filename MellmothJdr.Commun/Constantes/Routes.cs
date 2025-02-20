@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MellmothJdr.Commun.Constantes
+﻿namespace MellmothJdr.Commun.Constantes
 {
     public static class Routes
     {
@@ -14,7 +8,7 @@ namespace MellmothJdr.Commun.Constantes
         public const string DnDHome = "/dnd/home";
         public const string ChroniquesOubliesHome = "/ChroniquesOublies/home";
         public const string MesGamesTemplate = "/game/{GameId:guid}/my-game";
-        public static string MesGamesDnd => MesGamesTemplate.Replace("{GameId:guid}",Ids.Jeux.DnD.ToString());
-        public static string MesGamesChroniquesOublies => MesGamesTemplate.Replace("{GameId:guid}",Ids.Jeux.ChroniquesOublies.ToString());
+        public static string MesGamesDnd => MesGamesTemplate.Replace("{GameId:guid}", Ids.Jeux.DnD.ToString());
+        public static string MesGamesChroniquesOublies => MesGamesTemplate.Replace("{GameId:guid}", Ids.Jeux.ChroniquesOublies.ToString());
     }
 }
