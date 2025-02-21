@@ -1,6 +1,5 @@
-﻿using MellmothJdr.Services.Dto;
-
-using NotificationManager.Infrastructure.Entities;
+﻿using MellmothJdr.DAL.Entities;
+using MellmothJdr.Services.Dto;
 
 namespace MellmothJdr.Services.IServices
 {

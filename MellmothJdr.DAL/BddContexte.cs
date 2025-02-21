@@ -4,8 +4,6 @@ using MellmothJdr.DAL.Entities.FichesPersos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-using NotificationManager.Infrastructure.Entities;
-
 using TransverseApiSessionCDR.Infrastructure;
 
 namespace NotificationManager.Infrastructure

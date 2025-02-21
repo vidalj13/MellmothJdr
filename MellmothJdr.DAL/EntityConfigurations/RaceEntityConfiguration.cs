@@ -1,5 +1,4 @@
 ﻿using MellmothJdr.DAL.Entities;
-using MellmothJdr.DAL.Entities.FichesPersos;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -19,19 +18,6 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
             builder.HasOne(x => x.Jeu)
                 .WithMany(x => x.Races)
                 .HasForeignKey(x => x.JeuId);
-        }
-    }
-    
-    internal class FichePersoChroniquesOubliesConfiguration : IEntityTypeConfiguration<FichePersoChroniquesOublies>
-    {
-        public void Configure(EntityTypeBuilder<FichePersoChroniquesOublies> builder)
-        {
-            builder.ToTable("FichesPersoChroniquesOublies");
-
-            System.Linq.Expressions.Expression<Func<Race, IEnumerable<FichePersoChroniquesOublies>>> navigationExpressionRaces = x => x.FichesPersoChroniquesOublies;
-            System.Linq.Expressions.Expression<Func<Jeu, IEnumerable<FichePersoChroniquesOublies>>> navigationExpressionJeux = x => x.FichesPersoChroniquesOublies;
-            builder.ConfigureBaseFichePersoEntity(navigationExpressionRaces, navigationExpressionJeux);
-
         }
     }
 }

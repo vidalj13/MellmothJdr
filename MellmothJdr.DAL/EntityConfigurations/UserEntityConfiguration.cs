@@ -1,7 +1,7 @@
+using MellmothJdr.DAL.Entities;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-using NotificationManager.Infrastructure.Entities;
 
 using Seedwork.EntityFramework.Extensions;
 

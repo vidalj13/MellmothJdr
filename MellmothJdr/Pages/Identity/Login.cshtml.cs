@@ -1,6 +1,7 @@
 using System.Security.Claims;
 
 using MellmothJdr.Commun.Constantes;
+using MellmothJdr.DAL.Entities;
 using MellmothJdr.Services.IServices;
 
 using Microsoft.AspNetCore.Authentication;
@@ -36,7 +37,7 @@ public class Login : PageModel
         if (!(user?.IsAuthenticated ?? false))
             return LocalRedirect(Routes.Home);
         string email = user.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress").Value;
-        Guid userId = await _usersService.AddUserIfNotExistsAsync(new NotificationManager.Infrastructure.Entities.User()
+        Guid userId = await _usersService.AddUserIfNotExistsAsync(new User()
         {
             ExterneId = email
         });

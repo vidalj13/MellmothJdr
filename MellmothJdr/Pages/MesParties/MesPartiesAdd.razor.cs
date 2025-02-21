@@ -1,13 +1,12 @@
 ﻿using MellmothJdr.BlazorBase.Pages;
 using MellmothJdr.Commun.Constantes;
+using MellmothJdr.DAL.Entities;
 using MellmothJdr.Services.Dto;
 using MellmothJdr.Services.IServices;
 
 using Microsoft.AspNetCore.Components;
 
 using MudBlazor;
-
-using NotificationManager.Infrastructure.Entities;
 namespace MellmothJdr.Pages.MesParties;
 
 public class MesPartiesAddPage : AuthenticatedPage

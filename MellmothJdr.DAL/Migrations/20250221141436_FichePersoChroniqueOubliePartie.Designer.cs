@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250221141436_FichePersoChroniqueOubliePartie")]
+    partial class FichePersoChroniqueOubliePartie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,9 +79,6 @@ namespace MellmothJdr.DAL.Migrations
                     b.Property<int>("TailleCm")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("JeuId");
@@ -86,8 +86,6 @@ namespace MellmothJdr.DAL.Migrations
                     b.HasIndex("PartieId");
 
                     b.HasIndex("RaceId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("FichesPersoChroniquesOublies", (string)null);
                 });
@@ -242,19 +240,11 @@ namespace MellmothJdr.DAL.Migrations
                         .WithMany("FichesPersoChroniquesOublies")
                         .HasForeignKey("RaceId");
 
-                    b.HasOne("MellmothJdr.DAL.Entities.User", "User")
-                        .WithMany("FichePersoChroniqueOublies")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Jeu");
 
                     b.Navigation("Partie");
 
                     b.Navigation("Race");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MellmothJdr.DAL.Entities.Partie", b =>
@@ -308,8 +298,6 @@ namespace MellmothJdr.DAL.Migrations
 
             modelBuilder.Entity("MellmothJdr.DAL.Entities.User", b =>
                 {
-                    b.Navigation("FichePersoChroniqueOublies");
-
                     b.Navigation("Parties");
                 });
 #pragma warning restore 612, 618

@@ -1,6 +1,5 @@
-﻿using MellmothJdr.DAL.Entities.FichesPersos;
-
-using NotificationManager.Infrastructure.Entities.Base;
+﻿using MellmothJdr.DAL.Entities.Base;
+using MellmothJdr.DAL.Entities.FichesPersos;
 
 namespace MellmothJdr.DAL.Entities
 {

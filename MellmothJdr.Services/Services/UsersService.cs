@@ -1,10 +1,10 @@
-﻿using MellmothJdr.Services.IServices;
+﻿using MellmothJdr.DAL.Entities;
+using MellmothJdr.Services.IServices;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 using NotificationManager.Infrastructure;
-using NotificationManager.Infrastructure.Entities;
 
 namespace MellmothJdr.Services.Services;
 

@@ -1,4 +1,4 @@
-﻿namespace NotificationManager.Infrastructure.Entities.Base
+﻿namespace MellmothJdr.DAL.Entities.Base
 {
     public class BaseEntity
     {

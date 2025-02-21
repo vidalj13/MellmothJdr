@@ -1,4 +1,4 @@
-﻿using NotificationManager.Infrastructure.Entities;
+﻿using MellmothJdr.DAL.Entities;
 
 namespace MellmothJdr.Services.IServices
 {

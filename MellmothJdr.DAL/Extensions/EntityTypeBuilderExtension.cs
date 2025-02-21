@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using NotificationManager.Infrastructure.Entities.Base;
+using MellmothJdr.DAL.Entities.Base;
 
 namespace Seedwork.EntityFramework.Extensions
 {
@@ -39,7 +40,9 @@ namespace Seedwork.EntityFramework.Extensions
         /// <param name="builder"></param>
         public static void ConfigureBaseFichePersoEntity<T>(this EntityTypeBuilder<T> builder, 
             Expression<Func<Race, IEnumerable<T>>> navigationExpressionRaces, 
-            Expression<Func<Jeu, IEnumerable<T>>> navigationExpressionJeux) where T : BaseFichePersoEntity
+            Expression<Func<Partie, IEnumerable<T>>> navigationExpressionParties, 
+            Expression<Func<Jeu, IEnumerable<T>>> navigationExpressionJeux,
+            Expression<Func<User, IEnumerable<T>>> navigationExpressionUsers) where T : BaseFichePersoEntity
         {
             builder.ConfigureBaseEntity();
 
@@ -69,6 +72,12 @@ namespace Seedwork.EntityFramework.Extensions
             builder.HasOne(x => x.Jeu)
                 .WithMany(navigationExpressionJeux)
                 .HasForeignKey(x => x.JeuId);
+            builder.HasOne(x => x.Partie)
+                .WithMany(navigationExpressionParties)
+                .HasForeignKey(x => x.PartieId);
+            builder.HasOne(x => x.User)
+                .WithMany(navigationExpressionUsers)
+                .HasForeignKey(x => x.UserId);
         }
     }
 }

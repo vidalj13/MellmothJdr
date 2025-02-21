@@ -1,3 +1,5 @@
+using MellmothJdr.Commun.Constantes;
+using MellmothJdr.DAL.Entities;
 using MellmothJdr.Services.Dto;
 using MellmothJdr.Services.IServices;
 
@@ -5,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 using NotificationManager.Infrastructure;
-using NotificationManager.Infrastructure.Entities;
 
 namespace MellmothJdr.Services.Services;
 
@@ -43,7 +44,7 @@ public class JeuService : ServiceBase, IJeuService
             {
                 Id = x.Id,
                 Nom = x.Nom,
-                NombrePerso = 0,
+                NombrePerso = gameId == Ids.Jeux.ChroniquesOublies ? x.FichePersoChroniqueOublies.Count(y => y.UserId == idUserInterne) : 0, 
                 NombreParticipant = x.NombreParticipant
             })
             .ToListAsync(token);

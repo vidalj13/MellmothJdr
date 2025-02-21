@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MellmothJdr.DAL.Entities.Base;
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 
 using NotificationManager.Infrastructure;
-using NotificationManager.Infrastructure.Entities.Base;
 
 namespace TransverseApiSessionCDR.Infrastructure
 {

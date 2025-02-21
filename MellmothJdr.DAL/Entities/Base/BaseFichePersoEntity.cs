@@ -1,4 +1,5 @@
 ﻿using MellmothJdr.DAL.Entities;
+using MellmothJdr.DAL.Entities.Base;
 
 namespace NotificationManager.Infrastructure.Entities.Base
 {
@@ -18,5 +19,9 @@ namespace NotificationManager.Infrastructure.Entities.Base
         public Race Race { get; set; }
         public Guid? JeuId { get; set; }
         public Jeu Jeu { get; set; }
+        public Guid? PartieId{ get; set; }
+        public Partie Partie { get; set; }
+        public Guid UserId { get; set; }
+        public User User { get; set; }
     }
 }
