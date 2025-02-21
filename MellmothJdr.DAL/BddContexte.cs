@@ -1,3 +1,6 @@
+using MellmothJdr.DAL.Entities;
+using MellmothJdr.DAL.Entities.FichesPersos;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

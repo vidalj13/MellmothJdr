@@ -1,4 +1,6 @@
-﻿using NotificationManager.Infrastructure.Entities.Base;
+﻿using MellmothJdr.DAL.Entities;
+
+using NotificationManager.Infrastructure.Entities.Base;
 
 namespace NotificationManager.Infrastructure.Entities
 {
