@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250221094436_AddPartie")]
+    partial class AddPartie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,8 +92,7 @@ namespace MellmothJdr.DAL.Migrations
                     b.Property<string>("Nom")
                         .HasColumnType("varchar(200)");
 
-                    b.Property<int?>("NombreParticipant")
-                        .IsRequired()
+                    b.Property<int>("NombreParticipant")
                         .HasColumnType("int");
 
                     b.Property<Guid>("UserId")

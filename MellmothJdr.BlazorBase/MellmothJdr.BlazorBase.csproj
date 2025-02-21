@@ -10,4 +10,8 @@
 	  <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MellmothJdr.Services\MellmothJdr.Services.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -10,5 +10,7 @@
         public const string MesGamesTemplate = "/game/{GameId:guid}/my-game";
         public static string MesGamesDnd => MesGamesTemplate.Replace("{GameId:guid}", Ids.Jeux.DnD.ToString());
         public static string MesGamesChroniquesOublies => MesGamesTemplate.Replace("{GameId:guid}", Ids.Jeux.ChroniquesOublies.ToString());
+
+        public const string MesGamesAddTemplate = "/game/{GameId:guid}/my-game/add";
     }
 }

@@ -1,18 +1,32 @@
 ﻿@page "/game/{GameId:guid}/my-game"
+@using MellmothJdr.Services.Dto
 @inherits MesPartiesPage
 
 @if (IsReady)
 {
-    <PageTitle>Mes parties - @Jeu.Nom</PageTitle>
-    <h1>Mes parties - @Jeu.Nom</h1>
-    <div>
-    @Jeu.Description
-</div>
-    @if (IsAuthenticated)
-    {
-        <div>
-        </div>
-    }
+    <PageTitle>Mes parties</PageTitle>
+    <MudTable Items="@Elements" Dense="true" Hover="true" Bordered="true" Striped="true" Filter="new Func<PartieDto,bool>(FilterFunc1)" >
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Mes parties - @Jeu.Nom</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Chercher" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            <MudButton Href="@Routes.MesGamesAddTemplate.Replace("{GameId:guid}", GameId.ToString())" Variant="Variant.Filled" Color="Color.Primary"
+                       StartIcon="@Icons.Material.Filled.Add">Ajouter</MudButton>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh>Nom</MudTh>
+            <MudTh>Nombre de participant</MudTh>
+            <MudTh>Nombre de mes persos</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Nom">@context.Nom</MudTd>
+            <MudTd DataLabel="Nb participant">@context.NombreParticipant</MudTd>
+            <MudTd DataLabel="Nb persos">@context.NombrePerso</MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
 
 }
 else

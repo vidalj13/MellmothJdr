@@ -1,13 +1,20 @@
 ﻿using System.Security.Claims;
 
+using MellmothJdr.Commun.Constantes;
+using MellmothJdr.Services.IServices;
+
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MellmothJdr.BlazorBase.Pages
 {
     [Authorize]
     public class AuthenticatedPage : AuthenticatedPartialPage
     {
-        protected Guid? IdUserInterne;
+        protected Guid IdUserInterne;
+        [Inject]
+        protected IServiceScopeFactory _scopeFactory { get; set; }
 
         protected override Task LoadAsync()
         {
@@ -19,10 +26,15 @@ namespace MellmothJdr.BlazorBase.Pages
             await base.OnInitializedAsync();
             if (!IsAuthenticated)
             {
-                Navigation.NavigateTo("Identity/Login", true);
+                Navigation.NavigateTo(Routes.Login, true);
             }
             Claim claim = User.FindFirst("IdUserInterne");
             IdUserInterne = Guid.Parse(claim?.Value);
+        }
+
+        protected T GetScopedService<T>() where T: IScopableService
+        {
+            return _scopeFactory.CreateScope().ServiceProvider.GetService<T>();
         }
     }
 }

@@ -4,15 +4,21 @@
 @if (IsReady)
 {
     <PageTitle>@Jeu.Nom</PageTitle>
+    <div>
     <h1>@Jeu.Nom</h1>
 
     @Jeu.Description
-
+    </div>
     @if (IsAuthenticated)
     {
-        <span>Mes persos</span>
+        <div>
+            <MudButton Href="@(Routes.MesGamesDnd)"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary">
+                Mes Parties
+            </MudButton>
+        </div>
     }
-
 }
 else
 {
