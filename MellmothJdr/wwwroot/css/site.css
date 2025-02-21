@@ -66,3 +66,7 @@ a, .btn-link {
 .blazor-error-boundary::after {
     content: "An error has occurred."
 }
+/*cutom*/
+.c-mt-15 {
+    margin-top: 15px;
+}
