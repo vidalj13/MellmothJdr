@@ -1,4 +1,5 @@
 ﻿@using System.Security.Claims
+@using MellmothJdr.DAL.Entities
 
 @inherits BaseFichePersoFormComponent;
 
@@ -11,9 +12,36 @@
                     <MudItem xs="12" sm="6">
                         <MudTextField T="string" Label="@Texte.Nom" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Nom)" @bind-Value="@BaseFichePerso.Nom" />
                         <MudNumericField T="int" Label="@Texte.Lvl" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Lvl)" @bind-Value="@BaseFichePerso.Niveau" />
-                        <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
+
+                        <MudGrid>
+                            <MudItem xs="12" sm="4">
+                                <MudSwitch @bind-Value="IsRaceCustom" Label="@Texte.RacePersonnalisee" Color="Color.Primary" />
+                            </MudItem>
+                            <MudItem xs="12" sm="8">
+
+                                @if (Races.Any() && !IsRaceCustom)
+                                {
+                                    <MudSelect T="Race" Label="@Texte.Race" MultiSelection="false" @bind-Value="BaseFichePerso.Race">
+                                        @foreach (var race in Races)
+                                        {
+                                            <MudSelectItem T="Race" Tooltip="" Value="@race">
+                                                <MudTooltip Text="@race.Description" Arrow="true" Placement="Placement.Right">
+                                                @race.RaceLibelle
+                                                </MudTooltip>
+                                            </MudSelectItem>
+                                        }
+                                    </MudSelect>
+                                }
+                                else
+                                {
+
+                                    <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
+                                }
+                            </MudItem>
+                        </MudGrid>
+
                         <MudNumericField T="int" Label="@Texte.Pv" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Pv)" @bind-Value="@BaseFichePerso.PvMax" />
-                   </MudItem>
+                    </MudItem>
                     <MudItem xs="12" sm="6">
                         <MudNumericField T="int" Label="@Texte.Taille" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Taille)" @bind-Value="@BaseFichePerso.TailleCm" />
                         <MudNumericField T="int" Label="@Texte.Poid" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Poid)" @bind-Value="@BaseFichePerso.PoidKg" />

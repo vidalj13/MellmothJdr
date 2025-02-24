@@ -183,6 +183,9 @@
   <data name="Race" xml:space="preserve">
     <value>Race</value>
   </data>
+  <data name="RacePersonnalisee" xml:space="preserve">
+    <value>Personalisé</value>
+  </data>
   <data name="RaceShort" xml:space="preserve">
     <value>Race</value>
   </data>

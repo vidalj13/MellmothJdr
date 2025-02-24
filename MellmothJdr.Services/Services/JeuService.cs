@@ -10,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using NotificationManager.Infrastructure;
 
 namespace MellmothJdr.Services.Services;
-
 public class JeuService : ServiceBase, IJeuService
 {
 

@@ -1,17 +1,13 @@
 ﻿using MellmothJdr.BlazorBase.Pages;
 using MellmothJdr.Commun.Constantes;
+using MellmothJdr.DAL.Entities;
 using MellmothJdr.DAL.Entities.FichesPersos;
 using MellmothJdr.Pages.Persos;
-using MellmothJdr.Services.Dto;
 using MellmothJdr.Services.IServices;
 
 using Microsoft.AspNetCore.Components;
 
-using MudBlazor;
-
 using NotificationManager.Infrastructure.Entities.Base;
-
-using static MudBlazor.CategoryTypes;
 namespace MellmothJdr.Pages.MesParties;
 
 public class DetailPartieAddPersoPage : AuthenticatedPage
@@ -20,13 +16,14 @@ public class DetailPartieAddPersoPage : AuthenticatedPage
     public Guid GameId { get; set; }  // Liaison du paramètre 'id' en tant que Guid
     [Parameter]
     public Guid MyGameId { get; set; }  // Liaison du paramètre 'id' en tant que Guid
-
+    protected List<Race> Races { get; set; } = new List<Race>();
     public BaseFichePersoFormComponent FormBase { get; set; }
     public BaseFichePersoEntity BaseFichePerso { get; set; } = new();
     public FichePersoChroniquesOublies FichePersoChroniquesOublies { get; set; } = new();
     protected override async Task LoadAsync()
     {
-
+        Task<List<Race>> taskRaces = GetScopedService<IRaceService>().GetRacesAsync(GameId, CancellationToken.None);
+        Races = await taskRaces;
     }
 
     protected async Task Save()
@@ -48,6 +45,10 @@ public class DetailPartieAddPersoPage : AuthenticatedPage
         FichePersoChroniquesOublies.JeuId = GameId;
         FichePersoChroniquesOublies.PartieId = MyGameId;
         FichePersoChroniquesOublies.PvEnCours = FichePersoChroniquesOublies.PvMax;
+        if(!FormBase.IsRaceCustom)
+        {
+            FichePersoChroniquesOublies.RaceLibelle = FichePersoChroniquesOublies.Race.RaceLibelle;
+        }
         await GetScopedService<IJeuService>().AddFichePersoChroniquesOubliesAsync(FichePersoChroniquesOublies, CancellationToken.None);
     }
 

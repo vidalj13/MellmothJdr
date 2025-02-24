@@ -259,6 +259,15 @@ namespace MellmothJdr.Commun {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Personalisé.
+        /// </summary>
+        public static string RacePersonnalisee {
+            get {
+                return ResourceManager.GetString("RacePersonnalisee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Race.
         /// </summary>
         public static string RaceShort {

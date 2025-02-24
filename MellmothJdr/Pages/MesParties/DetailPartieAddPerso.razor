@@ -8,11 +8,11 @@
     @if (Ids.Jeux.ChroniquesOublies == GameId)
     {
 
-        <BaseFichePersoForm BaseFichePerso="FichePersoChroniquesOublies" @ref="FormBase" />
+        <BaseFichePersoForm BaseFichePerso="FichePersoChroniquesOublies" Races="@Races" @ref="FormBase" />
     }
     else
     {
-        <BaseFichePersoForm BaseFichePerso="BaseFichePerso" @ref="FormBase" />
+        <BaseFichePersoForm BaseFichePerso="BaseFichePerso" Races="@Races" @ref="FormBase" />
     }
 
     <MudGrid>
