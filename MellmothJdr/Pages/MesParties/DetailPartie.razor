@@ -1,0 +1,42 @@
+﻿@page "/game/{GameId:guid}/my-game/{MyGameId:guid}"
+@using MellmothJdr.Services.Dto
+@inherits DetailPartiePage
+
+@if (IsReady)
+{
+    <PageTitle>Partie @Partie.Nom</PageTitle>
+
+    <MudGrid>
+        <MudItem xs="12" sm="4">
+            <MudText Typo="Typo.h6">Partie @Partie.Nom</MudText>
+        </MudItem>
+        <MudItem xs="6" sm="4">
+            <MudButton Href="@Routes.MyGamesDetailsAddPersoTemplate.Replace("{GameId:guid}", GameId.ToString()).Replace("{MyGameId:guid}", MyGameId.ToString())"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       StartIcon="@Icons.Material.Filled.Add">Ajouter un perso</MudButton>
+        </MudItem>
+    </MudGrid>
+
+    <MudTable Items="@Partie.Persos" Class="c-mt-15"  Dense="false" Hover="true" Bordered="true" Striped="true">
+        <HeaderContent>
+            <MudTh>Nom</MudTh>
+            <MudTh>Race</MudTh>
+            <MudTh>Pv</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Nom">@context.Nom</MudTd>
+            <MudTd DataLabel="Race">@context.RaceLibelle</MudTd>
+            <MudTd DataLabel="Nb persos">@($"{context.PvEnCours}/{context.PvMax}")</MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
+
+}
+else
+{
+    <PageTitle>Partie</PageTitle>
+    <CustomLoader />
+}

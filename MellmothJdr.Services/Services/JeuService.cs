@@ -35,6 +35,33 @@ public class JeuService : ServiceBase, IJeuService
         return retour;
     }
 
+    public async Task<PartieDetailDto> GetPartieAsync(Guid idUserInterne, Guid gameId, Guid myGameId, CancellationToken token)
+    {
+        using BddContexte bddContexte = GetScopedBddContexte();
+        return await bddContexte.Parties.Where(x => x.Id == myGameId && x.UserId == idUserInterne)
+            .OrderByDescending(x => x.DateMaj)
+            .Select(x => new PartieDetailDto()
+            {
+                Id = x.Id,
+                Nom = x.Nom,
+                Persos = gameId == Ids.Jeux.ChroniquesOublies ? x.FichePersoChroniqueOublies.Select(y => new PersoDto()
+                {
+                    Id = y.Id,
+                    Nom = y.Nom,
+                    RaceLibelle = y.RaceLibelle,
+                    TailleCm = y.TailleCm,
+                    PoidKg = y.PoidKg,
+                    Age = y.Age,
+                    Religion = y.Religion,
+                    Niveau = y.Niveau,
+                    PvMax = y.PvMax,
+                    PvEnCours = y.PvEnCours
+                }).ToList() : new List<PersoDto>(),
+                NombreParticipant = x.NombreParticipant
+            })
+            .FirstAsync(token);
+    }
+
     public async Task<List<PartieDto>> GetPartiesAsync(Guid idUserInterne, Guid gameId, CancellationToken token)
     {
         using BddContexte bddContexte = GetScopedBddContexte();

@@ -31,11 +31,18 @@
             <MudTh>Nom</MudTh>
             <MudTh>Nombre de participant</MudTh>
             <MudTh>Nombre de mes persos</MudTh>
+            <MudTh></MudTh>
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Nom">@context.Nom</MudTd>
             <MudTd DataLabel="Nb participant">@context.NombreParticipant</MudTd>
             <MudTd DataLabel="Nb persos">@context.NombrePerso</MudTd>
+            <MudTd>
+                <MudButton Href="@Routes.MyGamesDetailsTemplate.Replace("{GameId:guid}", GameId.ToString()).Replace("{MyGameId:guid}", context.Id.ToString())"
+                           Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           StartIcon="@Icons.Material.Filled.Edit"></MudButton>
+            </MudTd>
         </RowTemplate>
         <PagerContent>
             <MudTablePager />

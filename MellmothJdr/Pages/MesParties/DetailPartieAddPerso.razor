@@ -1,0 +1,15 @@
+﻿@page "/game/{GameId:guid}/my-game/{MyGameId:guid}/add-perso"
+@using MellmothJdr.Pages.Persos
+@inherits DetailPartieAddPersoPage
+
+<PageTitle>Créer un perso</PageTitle>
+@if (IsReady)
+{
+
+    <PersoForm/>
+}
+else
+{
+    
+    <CustomLoader />
+}
