@@ -1,5 +1,6 @@
 using MellmothJdr.Commun.Constantes;
 using MellmothJdr.DAL.Entities;
+using MellmothJdr.DAL.Entities.FichesPersos;
 using MellmothJdr.Services.Dto;
 using MellmothJdr.Services.IServices;
 
@@ -15,6 +16,13 @@ public class JeuService : ServiceBase, IJeuService
 
     public JeuService(IServiceScopeFactory scopeFactory) : base(scopeFactory)
     {
+    }
+
+    public async Task AddFichePersoChroniquesOubliesAsync(FichePersoChroniquesOublies fichePersoChroniquesOublies, CancellationToken token)
+    {
+        using BddContexte bddContexte = GetScopedBddContexte();
+        await bddContexte.FichesPersoChroniquesOublies.AddAsync(fichePersoChroniquesOublies, token);
+        await bddContexte.SaveBaseEntityChangesAsync(token);
     }
 
     public async Task AddPartiesAsync(Partie newPartie, CancellationToken token)

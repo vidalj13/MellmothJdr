@@ -2,17 +2,17 @@
 @using MellmothJdr.Services.Dto
 @inherits MesPartiesPage
 
+<PageTitle>@Texte.MyGame</PageTitle>
 @if (IsReady)
 {
-    <PageTitle>Mes parties</PageTitle>
 
     <MudGrid>
         <MudItem xs="12" sm="4">
-            <MudText Typo="Typo.h6">Mes parties - @Jeu.Nom</MudText>
+            <MudText Typo="Typo.h6">@string.Format(Texte.MyGameName,@Jeu.Nom)</MudText>
         </MudItem>
         <MudItem xs="6" sm="4">
             <MudTextField @bind-Value="searchString1"
-                          Placeholder="Chercher"
+                          Placeholder="@Texte.Chercher"
                           Adornment="Adornment.Start"
                           AdornmentIcon="@Icons.Material.Filled.Search"
                           IconSize="Size.Medium"
@@ -22,21 +22,21 @@
             <MudButton Href="@Routes.MesGamesAddTemplate.Replace("{GameId:guid}", GameId.ToString())"
                        Variant="Variant.Filled"
                        Color="Color.Primary"
-                       StartIcon="@Icons.Material.Filled.Add">Ajouter</MudButton>
+                       StartIcon="@Icons.Material.Filled.Add">@Texte.Add</MudButton>
         </MudItem>
     </MudGrid>
 
     <MudTable Items="@Elements" Class="c-mt-15"  Dense="false" Hover="true" Bordered="true" Striped="true" Filter="new Func<PartieDto,bool>(FilterFunc1)">
         <HeaderContent>
-            <MudTh>Nom</MudTh>
-            <MudTh>Nombre de participant</MudTh>
-            <MudTh>Nombre de mes persos</MudTh>
+            <MudTh>@Texte.Nom</MudTh>
+            <MudTh>@Texte.NbParticipant</MudTh>
+            <MudTh>@Texte.NbMyPerso</MudTh>
             <MudTh></MudTh>
         </HeaderContent>
         <RowTemplate>
-            <MudTd DataLabel="Nom">@context.Nom</MudTd>
-            <MudTd DataLabel="Nb participant">@context.NombreParticipant</MudTd>
-            <MudTd DataLabel="Nb persos">@context.NombrePerso</MudTd>
+            <MudTd DataLabel="@Texte.NomShort">@context.Nom</MudTd>
+            <MudTd DataLabel="@Texte.NbParticipantShort">@context.NombreParticipant</MudTd>
+            <MudTd DataLabel="@Texte.NbPersoShort">@context.NombrePerso</MudTd>
             <MudTd>
                 <MudButton Href="@Routes.MyGamesDetailsTemplate.Replace("{GameId:guid}", GameId.ToString()).Replace("{MyGameId:guid}", context.Id.ToString())"
                            Variant="Variant.Filled"
@@ -45,13 +45,12 @@
             </MudTd>
         </RowTemplate>
         <PagerContent>
-            <MudTablePager />
+            <CustomMudTablePager />
         </PagerContent>
     </MudTable>
 
 }
 else
 {
-    <PageTitle>Mes parties</PageTitle>
     <CustomLoader />
 }

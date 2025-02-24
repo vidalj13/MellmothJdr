@@ -1,0 +1,27 @@
+﻿@using System.Security.Claims
+
+@inherits BaseFichePersoFormComponent;
+
+
+<MudGrid>
+    <MudItem xs="12" sm="12">
+        <MudPaper Class="pa-4">
+            <MudForm Model="@BaseFichePerso" Spacing="10" @ref="Form">
+                <MudGrid>
+                    <MudItem xs="12" sm="6">
+                        <MudTextField T="string" Label="@Texte.Nom" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Nom)" @bind-Value="@BaseFichePerso.Nom" />
+                        <MudNumericField T="int" Label="@Texte.Lvl" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Lvl)" @bind-Value="@BaseFichePerso.Niveau" />
+                        <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
+                        <MudNumericField T="int" Label="@Texte.Pv" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Pv)" @bind-Value="@BaseFichePerso.PvMax" />
+                   </MudItem>
+                    <MudItem xs="12" sm="6">
+                        <MudNumericField T="int" Label="@Texte.Taille" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Taille)" @bind-Value="@BaseFichePerso.TailleCm" />
+                        <MudNumericField T="int" Label="@Texte.Poid" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Poid)" @bind-Value="@BaseFichePerso.PoidKg" />
+                        <MudNumericField T="int" Label="@Texte.Age" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Age)" @bind-Value="@BaseFichePerso.Age" />
+                        <MudTextField T="string" Label="@Texte.Religion" Required="false" @bind-Value="@BaseFichePerso.Religion" />
+                    </MudItem>
+                </MudGrid>
+            </MudForm>
+        </MudPaper>
+    </MudItem>
+</MudGrid>

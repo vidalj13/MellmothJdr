@@ -2,7 +2,7 @@
 @using MellmothJdr.Services.Dto
 @inherits MesPartiesAddPage
 
-<PageTitle>Ajouter une partie</PageTitle>
+<PageTitle>@Texte.AjouterPartie</PageTitle>
 @if (IsReady)
 {
 
@@ -10,15 +10,15 @@
         <MudItem xs="12" sm="12">
             <MudPaper Class="pa-4">
                 <MudForm Model="@contextForm" Spacing="4" @ref="form" @bind-IsValid="@success">
-                    <MudTextField T="string" Label="Nom de la partie" Required="true" RequiredError="Le nom de la partie est obligatoire!" @bind-Value="@contextForm.Nom"/>
-                    <MudNumericField T="int?" Label="Nombre de participant" Required="true" RequiredError="Le nombre de participantest obligatoire!" @bind-Value="@contextForm.NombreParticipant"/>
+                    <MudTextField T="string" Label="@Texte.Nom" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Nom)" @bind-Value="@contextForm.Nom" />
+                    <MudNumericField T="int?" Label="@Texte.NbParticipant" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.NbParticipant)" @bind-Value="@contextForm.NombreParticipant" />
                 </MudForm>
             </MudPaper>
             <MudPaper Class="pa-4 mt-4">
                 <MudButton Variant="Variant.Filled" Color="Color.Primary" DropShadow="false" OnClick="@(Save)"
-                       StartIcon="@Icons.Material.Filled.Save">Enregistrer</MudButton>
+                       StartIcon="@Icons.Material.Filled.Save">@Texte.Save</MudButton>
                 <MudButton Variant="Variant.Filled" Color="Color.Secondary" DropShadow="false" OnClick="@(Back)" Class="mx-2"
-                           StartIcon="@Icons.Material.Filled.Cancel">Annuler</MudButton>
+                           StartIcon="@Icons.Material.Filled.Cancel">@Texte.Cancel</MudButton>
             </MudPaper>
         </MudItem>
     </MudGrid>

@@ -5,8 +5,27 @@
 <PageTitle>Créer un perso</PageTitle>
 @if (IsReady)
 {
+    @if (Ids.Jeux.ChroniquesOublies == GameId)
+    {
 
-    <PersoForm/>
+        <BaseFichePersoForm BaseFichePerso="FichePersoChroniquesOublies" @ref="FormBase" />
+    }
+    else
+    {
+        <BaseFichePersoForm BaseFichePerso="BaseFichePerso" @ref="FormBase" />
+    }
+
+    <MudGrid>
+        <MudItem xs="12" sm="12">
+            <MudPaper Class="pa-4 mt-4">
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" DropShadow="false" OnClick="@(Save)"
+                           StartIcon="@Icons.Material.Filled.Save">@Texte.Save</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" DropShadow="false" OnClick="@(Back)" Class="mx-2"
+                           StartIcon="@Icons.Material.Filled.Cancel">@Texte.Cancel</MudButton>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
 }
 else
 {
