@@ -62,7 +62,8 @@ public class JeuService : ServiceBase, IJeuService
                     Religion = y.Religion,
                     Niveau = y.Niveau,
                     PvMax = y.PvMax,
-                    PvEnCours = y.PvEnCours
+                    PvEnCours = y.PvEnCours,
+                    Classes = y.JoinFichePersoChroniquesOubliesClasses.Select(z => z.Classe.Libelle).ToList()
                 }).ToList() : new List<PersoDto>(),
                 NombreParticipant = x.NombreParticipant
             })

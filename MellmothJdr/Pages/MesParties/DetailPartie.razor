@@ -22,11 +22,13 @@
         <HeaderContent>
             <MudTh>@Texte.Nom</MudTh>
             <MudTh>@Texte.Race</MudTh>
+            <MudTh>@Texte.Classe</MudTh>
             <MudTh>@Texte.Pv</MudTh>
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="@Texte.NomShort">@context.Nom</MudTd>
             <MudTd DataLabel="@Texte.RaceShort">@context.RaceLibelle</MudTd>
+            <MudTh DataLabel="@Texte.Classe">@context.ClassesFormated</MudTh>
             <MudTd DataLabel="@Texte.PvShort">@($"{context.PvEnCours}/{context.PvMax}")</MudTd>
         </RowTemplate>
         <PagerContent>

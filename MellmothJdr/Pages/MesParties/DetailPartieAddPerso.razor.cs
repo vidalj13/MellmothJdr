@@ -36,7 +36,8 @@ public class DetailPartieAddPersoPage : AuthenticatedPage
     protected async Task Save()
     {
         await FormBase.Validate();
-        if (FormBase.IsValid)
+        await Form.Validate();
+        if (FormBase.IsValid && Form.IsValid)
         {
             if(GameId == Ids.Jeux.ChroniquesOublies)
             {
@@ -52,9 +53,18 @@ public class DetailPartieAddPersoPage : AuthenticatedPage
         FichePersoChroniquesOublies.JeuId = GameId;
         FichePersoChroniquesOublies.PartieId = MyGameId;
         FichePersoChroniquesOublies.PvEnCours = FichePersoChroniquesOublies.PvMax;
+        FichePersoChroniquesOublies.JoinFichePersoChroniquesOubliesClasses = new List<DAL.Entities.Jointures.JoinFichePersoChroniquesOubliesClasse>()
+        {
+            new DAL.Entities.Jointures.JoinFichePersoChroniquesOubliesClasse()
+            {
+                ClasseId = ClasseSelected.Id
+            }
+        };
         if(!FormBase.IsRaceCustom)
         {
             FichePersoChroniquesOublies.RaceLibelle = FichePersoChroniquesOublies.Race.RaceLibelle;
+            FichePersoChroniquesOublies.RaceId = FichePersoChroniquesOublies.Race.Id;
+            FichePersoChroniquesOublies.Race = null;
         }
         await GetScopedService<IJeuService>().AddFichePersoChroniquesOubliesAsync(FichePersoChroniquesOublies, CancellationToken.None);
     }

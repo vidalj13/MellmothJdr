@@ -17,7 +17,7 @@
                     <MudForm Model="@BaseFichePerso" Spacing="10" @ref="Form">
                         <MudGrid>
                             <MudItem xs="12" sm="6">
-                                <MudSelect T="Classe" Label="@Texte.Classe" MultiSelection="false" @bind-Value="ClasseSelected">
+                                <MudSelect T="Classe" Label="@Texte.Classe" MultiSelection="false" @bind-Value="ClasseSelected" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Classe)">
                                     @foreach (var classe in Classes)
                                     {
                                         <MudSelectItem T="Classe" Tooltip="" Value="@classe">

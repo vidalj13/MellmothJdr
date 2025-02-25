@@ -12,4 +12,7 @@ public class PersoDto
     public int Niveau { get; set; }
     public int PvMax { get; set; }
     public int PvEnCours { get; set; }
+    public List<string> Classes { get; set; }
+    public string ClassesFormated => string.Join(", ", Classes);
+
 }

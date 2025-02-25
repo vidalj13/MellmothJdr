@@ -3,7 +3,7 @@
 
 @inherits CustomTooltipWithImageComponent;
 
-<MudTooltip Arrow="@Arrow" Placement="@Placement" Style="@($"max-width: {Width}px; width: {Width}px;")">
+<MudTooltip Arrow="@Arrow" Placement="@Placement" Class="@("customMudTooltip"+Width)">
     <ChildContent>
         <MudAvatar Size="Size.Small">
             <MudImage Src="@SrcImage"></MudImage>
@@ -15,12 +15,12 @@
         <MudText Typo="Typo.body2">
         <MudGrid>
 
-            <MudItem xs="6">
+            <MudItem xs="3" md="6" Class="d-none d-md-block">
                 <MudPaper style='background-color: rgba(0, 0, 0, 1);'>
                     <MudImage Src="@SrcImage" Alt="@Titre" Style="@($"width:100%;")" Elevation="25" />
                 </MudPaper>
             </MudItem>
-            <MudItem xs="6">
+                <MudItem xs="12" md="6">
                 <MudGrid>
                     <MudItem xs="12">
                         <MudPaper><MudText>@Titre</MudText></MudPaper>
@@ -30,7 +30,7 @@
                         <MudFlexBreak />
                     <MudItem xs="12">
                         <MudPaper>
-                            <MudText>@Description</MudText>
+                                <MudText Align="Align.Left">@Description</MudText>
                         </MudPaper>
                     </MudItem>
                 </MudGrid>
@@ -42,7 +42,7 @@
 </MudTooltip>
 
 <style>
-    .mud-tooltip-root {
-        width: 100%;
+    .@("customMudTooltip"+Width) {
+        max-width: @(Width+"px !important");
     }
 </style>
