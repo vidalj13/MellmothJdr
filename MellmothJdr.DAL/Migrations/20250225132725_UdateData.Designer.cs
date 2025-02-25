@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250225132725_UdateData")]
+    partial class UdateData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +62,6 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("88a45295-7a95-487e-b881-fb9e0580a2a5"),
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "L’Arquebusier est un dur à cuire, un soldat ou un mercenaire habitué des champs de bataille. C’est un spécialiste du combat à distance et plus particulièrement des armes à feu et des explosifs.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             Libelle = "Arquebusier"
                         },
@@ -84,7 +86,6 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Le Chevalier est un noble guerrier errant, monté sur un puissant destrier et protégé par une armure lourde. Il parcourt la campagne en quête de torts à redresser et d’occasions de mettre son courage à l’épreuve.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             Libelle = "Chevalier"
                         },

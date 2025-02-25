@@ -18,28 +18,23 @@
                                 <MudSwitch @bind-Value="IsRaceCustom" Label="@Texte.RacePersonnalisee" Color="Color.Primary" />
                             </MudItem>
                             <MudItem xs="12" sm="8">
-
-                                @if (Races.Any() && !IsRaceCustom)
-                                {
-                                    <MudSelect T="Race" Label="@Texte.Race" MultiSelection="false" @bind-Value="BaseFichePerso.Race">
-                                        @foreach (var race in Races)
+                                        @if (Races.Any() && !IsRaceCustom)
                                         {
-                                            <MudSelectItem T="Race" Tooltip="" Value="@race">
-                                                <MudTooltip Text="@race.Description" Arrow="true" Placement="Placement.Right">
-                                                    <MudAvatar Size="Size.Small">
-                                                        <MudImage Src="@($"img/race/{race.Id}.jpg")"></MudImage>
-                                                    </MudAvatar>
-                                                @race.RaceLibelle
-                                                </MudTooltip>
-                                            </MudSelectItem>
-                                        }
-                                    </MudSelect>
-                                }
-                                else
-                                {
+                                            <MudSelect T="Race" Label="@Texte.Race" MultiSelection="false" @bind-Value="BaseFichePerso.Race">
+                                                @foreach (var race in Races)
+                                                {
+                                                    <MudSelectItem T="Race" Tooltip="" Value="@race">
+                                                        <CustomTooltipWithImage SrcImage="@($"img/race/{race.Id}.jpg")" Titre="@race.RaceLibelle" Description="@race.Description" Arrow="true" Placement="Placement.Right" Width="500" />
 
-                                    <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
-                                }
+                                                    </MudSelectItem>
+                                                }
+                                            </MudSelect>
+                                        }
+                                        else
+                                        {
+                                            <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
+                                        }
+
                             </MudItem>
                         </MudGrid>
 

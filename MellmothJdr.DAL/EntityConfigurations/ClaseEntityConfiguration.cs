@@ -32,6 +32,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         Libelle = "Arquebusier",
                         Id = Ids.Classe.Arquebusier,
                         JeuId = Ids.Jeux.ChroniquesOublies,
+                        Description = "L’Arquebusier est un dur à cuire, un soldat ou un mercenaire habitué des champs de bataille. C’est un spécialiste du combat à distance et plus particulièrement des armes à feu et des explosifs.",
                         DateCrea = dateInit,
                         DateMaj = dateInit
                     },
@@ -59,6 +60,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         Libelle = "Chevalier",
                         Id = Ids.Classe.Chevalier,
                         JeuId = Ids.Jeux.ChroniquesOublies,
+                        Description = "Le Chevalier est un noble guerrier errant, monté sur un puissant destrier et protégé par une armure lourde. Il parcourt la campagne en quête de torts à redresser et d’occasions de mettre son courage à l’épreuve.",
                         DateCrea = dateInit,
                         DateMaj = dateInit
                     },

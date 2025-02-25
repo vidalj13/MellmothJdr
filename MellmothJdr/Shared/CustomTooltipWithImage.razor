@@ -1,0 +1,48 @@
+﻿@using System.Security.Claims
+@using MellmothJdr.Shared
+
+@inherits CustomTooltipWithImageComponent;
+
+<MudTooltip Arrow="@Arrow" Placement="@Placement" Style="@($"max-width: {Width}px; width: {Width}px;")">
+    <ChildContent>
+        <MudAvatar Size="Size.Small">
+            <MudImage Src="@SrcImage"></MudImage>
+        </MudAvatar>
+        @Titre
+
+    </ChildContent>
+    <TooltipContent>
+        <MudText Typo="Typo.body2">
+        <MudGrid>
+
+            <MudItem xs="6">
+                <MudPaper style='background-color: rgba(0, 0, 0, 1);'>
+                    <MudImage Src="@SrcImage" Alt="@Titre" Style="@($"width:100%;")" Elevation="25" />
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6">
+                <MudGrid>
+                    <MudItem xs="12">
+                        <MudPaper><MudText>@Titre</MudText></MudPaper>
+                        
+                    </MudItem>
+
+                        <MudFlexBreak />
+                    <MudItem xs="12">
+                        <MudPaper>
+                            <MudText>@Description</MudText>
+                        </MudPaper>
+                    </MudItem>
+                </MudGrid>
+            </MudItem>
+
+            </MudGrid>
+        </MudText>
+    </TooltipContent>
+</MudTooltip>
+
+<style>
+    .mud-tooltip-root {
+        width: 100%;
+    }
+</style>

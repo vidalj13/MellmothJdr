@@ -21,18 +21,11 @@
                                     @foreach (var classe in Classes)
                                     {
                                         <MudSelectItem T="Classe" Tooltip="" Value="@classe">
-                                            <MudTooltip Text="@classe.Description" Arrow="true" Placement="Placement.Right">
-                                                <MudAvatar Size="Size.Small">
-                                                    <MudImage Src="@($"img/classe/{classe.Id}.jpg")"></MudImage>
-                                                </MudAvatar>
-                                                @classe.Libelle
-                                            </MudTooltip>
+                                            <CustomTooltipWithImage SrcImage="@($"img/classe/{classe.Id}.jpg")" Titre="@classe.Libelle" Description="@classe.Description" Arrow="true" Placement="Placement.Right" Width="500" />
                                         </MudSelectItem>
                                     }
                                 </MudSelect>
-
                             </MudItem>
-                          
                         </MudGrid>
                     </MudForm>
                 </MudPaper>
@@ -58,6 +51,6 @@
 }
 else
 {
-    
+
     <CustomLoader />
 }
