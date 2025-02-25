@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250225161709_UdateData3")]
+    partial class UdateData3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,7 +179,7 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("0441eff4-f2ca-4757-b02e-3e1043cf4234"),
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Le Voleur crochète les portes, détecte les pièges et préfère piller les cadavres des ennemis que de se salir les mains pendant le combat.\r\n",
+                            Description = "\r\n                        Description =\"\",",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             Libelle = "Voleur"
                         });

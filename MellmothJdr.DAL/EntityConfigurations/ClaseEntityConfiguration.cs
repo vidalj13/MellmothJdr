@@ -41,6 +41,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Barbare",
                         Id = Ids.Classe.Barbare,
+                        Description ="Le Barbare est un combattant sauvage issu d’une culture primitive. Il affronte ses ennemis avec rage sans se cacher derrière une lourde armure.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -50,6 +51,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Barde",
                         Id = Ids.Classe.Barde,
+                        Description ="Le Barde est un personnage polyvalent qui utilise la magie et le spectacle pour divertir et parvenir à ses fins. Il est aussi habitué aux ruses qu’à la diplomatie.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -69,6 +71,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Druide",
                         Id = Ids.Classe.Druide,
+                        Description ="Le Druide est un prêtre de la nature qui défend sa pureté originelle et tire ses pouvoirs de la vie, des animaux et des plantes.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -78,6 +81,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Ensorceleur",
                         Id = Ids.Classe.Ensorceleur,
+                        Description ="L’Ensorceleur tire son pouvoir d’un talent inné pour la magie. Il pratique une magie subtile à base de tromperie et de contrôle, et possède peu de sorts de destruction massive.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -87,6 +91,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Forgesort",
                         Id = Ids.Classe.Forgesort,
+                        Description ="À la fois artisan et enchanteur, artiste et magicien, le Forgesort lie les énergies occultes à la matière qu’il façonne pour créer des artefacts magiques ou des breuvages aux propriétés fantastiques.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -96,6 +101,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Guerrier",
                         Id = Ids.Classe.Guerrier,
+                        Description ="Le Guerrier est un combattant émérite qui n’a pas peur du danger et qui affronte ses ennemis l’arme à la main. De tous les profils de combattant, il est le plus spécialisé et le plus complet dans l’art du combat au corps à corps.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -105,6 +111,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Magicien",
                         Id = Ids.Classe.Magicien,
+                        Description ="Le Magicien n’est pas qu’un rat de bibliothèque. Il fait aussi appel à ses sorts pour se débarrasser de ses ennemis et pour aider ses compagnons.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -114,6 +121,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Moine",
                         Id = Ids.Classe.Moine,
+                        Description ="Le Moine combat à mains nues et utilise le contrôle qu’il a sur son esprit et son corps pour transformer ce dernier en arme de chair.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -123,6 +131,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Nécromancien",
                         Id = Ids.Classe.Necromancien,
+                        Description ="Le Nécromancien est un lanceur de sorts qui s’intéresse aux forces obscures et au pouvoir de la mort. Les Nécromanciens sont généralement considérés comme maléfiques et sont peu appréciés. Interprétez-le de façon subtile afin d’en faire un personnage plutôt sombre ou désespéré, mais pas forcément \"mauvais\" !\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -132,6 +141,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Prêtre",
                         Id = Ids.Classe.Pretre,
+                        Description ="Le Prêtre utilise l’énergie transmise par son dieu pour mener à bien ses missions avec la force de la foi mais aussi celle des armes si nécessaire.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -141,6 +151,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     {
                         Libelle = "Rôdeur",
                         Id = Ids.Classe.Rodeur,
+                        Description ="Le Rôdeur est à l’aise dans les forêts ténébreuses, où il traque les animaux dangereux et les créatures monstrueuses ou, au contraire, se fait l’ami des bêtes et le protecteur des lieux sauvages.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -151,6 +162,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         Libelle = "Voleur",
                         Id = Ids.Classe.Voleur,
                         JeuId = Ids.Jeux.ChroniquesOublies,
+                        Description ="Le Voleur crochète les portes, détecte les pièges et préfère piller les cadavres des ennemis que de se salir les mains pendant le combat.\r\n",
                         DateCrea = dateInit,
                         DateMaj = dateInit
                     },
