@@ -18,5 +18,22 @@
             public static Guid ElfeSylvain = new Guid("11223344-5566-7788-99aa-bbccddeeff00");
             public static Guid Gnome = new Guid("abcdef12-3456-7890-abcd-ef1234567890");
         }
+        public static class Classe
+        {
+            public static Guid Arquebusier = new Guid("88A45295-7A95-487E-B881-FB9E0580A2A5");
+            public static Guid Barbare = new Guid("0B7FD2D0-C2AD-4492-AB38-F741174D5A6D");
+            public static Guid Barde = new Guid("91B825C3-3E5A-4E1B-8724-DAF18EA27C6A");
+            public static Guid Chevalier = new Guid("C67E5709-A257-4DCD-9250-6C2786327091");
+            public static Guid Druide = new Guid("A91093AB-CDEC-4D36-8E30-9393A955C382");
+            public static Guid Ensorceleur = new Guid("2048962D-F0D3-460B-A054-FAE5EA578CC3");
+            public static Guid Forgesort = new Guid("7B00F70A-4E76-4D4C-8DF5-C7FFE0022C20");
+            public static Guid Guerrier = new Guid("B27608E8-B453-4397-8D41-7C3C3D9AF293");
+            public static Guid Magicien = new Guid("1A4B34B8-2752-4062-A0E5-59695A79D9C7");
+            public static Guid Moine = new Guid("E6D9A3BA-1DCC-4E33-859F-615DBBF3717F");
+            public static Guid Necromancien = new Guid("DED836B7-688E-4757-B100-1DC146142846");
+            public static Guid Pretre = new Guid("F5D228CD-75EE-4462-A2A7-102383250BDD");
+            public static Guid Rodeur = new Guid("6E3FD8E2-1680-4A8B-B928-1E48ACC20861");
+            public static Guid Voleur = new Guid("0441EFF4-F2CA-4757-B02E-3E1043CF4234");
+        }
     }
 }

@@ -18,7 +18,9 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
             System.Linq.Expressions.Expression<Func<Jeu, IEnumerable<FichePersoChroniquesOublies>>> navigationExpressionJeux = x => x.FichesPersoChroniquesOublies;
             System.Linq.Expressions.Expression<Func<Partie, IEnumerable<FichePersoChroniquesOublies>>> navigationExpressionParties = x => x.FichePersoChroniqueOublies;
             System.Linq.Expressions.Expression<Func<User, IEnumerable<FichePersoChroniquesOublies>>> navigationExpressionUsers = x => x.FichePersoChroniqueOublies;
-            builder.ConfigureBaseFichePersoEntity(navigationExpressionRaces, navigationExpressionParties, navigationExpressionJeux, navigationExpressionUsers);
+            builder.ConfigureBaseFichePersoEntity(navigationExpressionRaces, navigationExpressionParties, navigationExpressionJeux,navigationExpressionUsers);
+
+
 
         }
     }

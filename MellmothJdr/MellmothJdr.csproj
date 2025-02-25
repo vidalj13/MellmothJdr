@@ -23,6 +23,48 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Update="wwwroot\img\classe\0441EFF4-F2CA-4757-B02E-3E1043CF4234.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\0B7FD2D0-C2AD-4492-AB38-F741174D5A6D.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\1A4B34B8-2752-4062-A0E5-59695A79D9C7.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\2048962D-F0D3-460B-A054-FAE5EA578CC3.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\6E3FD8E2-1680-4A8B-B928-1E48ACC20861.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\7B00F70A-4E76-4D4C-8DF5-C7FFE0022C20.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\88A45295-7A95-487E-B881-FB9E0580A2A5.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\91B825C3-3E5A-4E1B-8724-DAF18EA27C6A.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\A91093AB-CDEC-4D36-8E30-9393A955C382.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\B27608E8-B453-4397-8D41-7C3C3D9AF293.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\C67E5709-A257-4DCD-9250-6C2786327091.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\DED836B7-688E-4757-B100-1DC146142846.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\E6D9A3BA-1DCC-4E33-859F-615DBBF3717F.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\classe\F5D228CD-75EE-4462-A2A7-102383250BDD.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Update="wwwroot\img\icon\ChroniquesOublies.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
@@ -30,6 +72,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Update="wwwroot\img\logo.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\01234567-89ab-cdef-0123-456789abcdef.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Update="wwwroot\img\race\11223344-5566-7788-99aa-bbccddeeff00.jpg">

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250225103951_Classes")]
+    partial class Classes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -177,6 +180,9 @@ namespace MellmothJdr.DAL.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("ClasseId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("DateCrea")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
@@ -226,6 +232,8 @@ namespace MellmothJdr.DAL.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClasseId");
 
                     b.HasIndex("JeuId");
 
@@ -495,6 +503,10 @@ namespace MellmothJdr.DAL.Migrations
 
             modelBuilder.Entity("MellmothJdr.DAL.Entities.FichesPersos.FichePersoChroniquesOublies", b =>
                 {
+                    b.HasOne("MellmothJdr.DAL.Entities.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId");
+
                     b.HasOne("MellmothJdr.DAL.Entities.Jeu", "Jeu")
                         .WithMany("FichesPersoChroniquesOublies")
                         .HasForeignKey("JeuId");
@@ -512,6 +524,8 @@ namespace MellmothJdr.DAL.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Classe");
 
                     b.Navigation("Jeu");
 

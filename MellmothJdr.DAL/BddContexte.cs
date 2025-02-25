@@ -18,6 +18,7 @@ namespace NotificationManager.Infrastructure
         public DbSet<User> Users { get; set; }
         public DbSet<Jeu> Jeux { get; set; }
         public DbSet<Race> Races { get; set; }
+        public DbSet<Classe> Classes { get; set; }
         public DbSet<Partie> Parties { get; set; }
         public DbSet<FichePersoChroniquesOublies> FichesPersoChroniquesOublies { get; set; }
     }

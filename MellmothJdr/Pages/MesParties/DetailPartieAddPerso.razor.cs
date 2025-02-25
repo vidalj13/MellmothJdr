@@ -7,6 +7,8 @@ using MellmothJdr.Services.IServices;
 
 using Microsoft.AspNetCore.Components;
 
+using MudBlazor;
+
 using NotificationManager.Infrastructure.Entities.Base;
 namespace MellmothJdr.Pages.MesParties;
 
@@ -17,13 +19,18 @@ public class DetailPartieAddPersoPage : AuthenticatedPage
     [Parameter]
     public Guid MyGameId { get; set; }  // Liaison du paramètre 'id' en tant que Guid
     protected List<Race> Races { get; set; } = new List<Race>();
+    protected List<Classe> Classes { get; set; } = new List<Classe>();
     public BaseFichePersoFormComponent FormBase { get; set; }
     public BaseFichePersoEntity BaseFichePerso { get; set; } = new();
     public FichePersoChroniquesOublies FichePersoChroniquesOublies { get; set; } = new();
+    public MudForm Form { get; set; }
+    public Classe ClasseSelected { get; set; }
     protected override async Task LoadAsync()
     {
         Task<List<Race>> taskRaces = GetScopedService<IRaceService>().GetRacesAsync(GameId, CancellationToken.None);
+        Task<List<Classe>> taskClasses= GetScopedService<IClasseService>().GetClassesAsync(GameId, CancellationToken.None);
         Races = await taskRaces;
+        Classes = await taskClasses;
     }
 
     protected async Task Save()

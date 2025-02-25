@@ -135,6 +135,9 @@
   <data name="Chercher" xml:space="preserve">
     <value>Chercher</value>
   </data>
+  <data name="Classe" xml:space="preserve">
+    <value>Classe</value>
+  </data>
   <data name="ElementParPage" xml:space="preserve">
     <value>Elément par page</value>
   </data>

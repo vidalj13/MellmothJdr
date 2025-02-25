@@ -18,7 +18,8 @@ public class RaceService : ServiceBase, IRaceService
     public async Task<List<Race>> GetRacesAsync(Guid gameId, CancellationToken none)
     {
         using BddContexte contexte = GetScopedBddContexte();
-        List<Race> races = await contexte.Races.Where(x => x.JeuId == gameId).ToListAsync(none);
+        List<Race> races = await contexte.Races.Where(x => x.JeuId == gameId)
+                                    .OrderBy(x => x.RaceLibelle).ToListAsync(none);
         return races;
     }
 }

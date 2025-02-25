@@ -115,6 +115,15 @@ namespace MellmothJdr.Commun {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Classe.
+        /// </summary>
+        public static string Classe {
+            get {
+                return ResourceManager.GetString("Classe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Elément par page.
         /// </summary>
         public static string ElementParPage {

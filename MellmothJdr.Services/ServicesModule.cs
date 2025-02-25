@@ -15,6 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddScoped<IUsersService, UsersService>()
                 .AddScoped<IJeuService, JeuService>()
                 .AddScoped<IRaceService, RaceService>()
+                .AddScoped<IClasseService, ClasseService>()
                 .AddDAL(connectionString,
                             _dbConnectionMaxRetryCount,
                              _dbConnectionMaxRetryDelay);
