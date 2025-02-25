@@ -26,6 +26,9 @@
                                         {
                                             <MudSelectItem T="Race" Tooltip="" Value="@race">
                                                 <MudTooltip Text="@race.Description" Arrow="true" Placement="Placement.Right">
+                                                    <MudAvatar Size="Size.Small">
+                                                        <MudImage Src="@($"img/race/{race.Id}.jpg")"></MudImage>
+                                                    </MudAvatar>
                                                 @race.RaceLibelle
                                                 </MudTooltip>
                                             </MudSelectItem>

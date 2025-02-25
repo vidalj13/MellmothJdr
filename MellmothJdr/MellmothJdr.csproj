@@ -32,6 +32,27 @@
       <Content Update="wwwroot\img\logo.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <Content Update="wwwroot\img\race\11223344-5566-7788-99aa-bbccddeeff00.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\13579bdf-2468-ace0-bdf1-3579bdf24680.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\9c8d7e6f-5b4a-1234-cde9-0f1e2d3c4b5a.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\a1b2c3d4-e5f6-47a8-90ab-cdef12345678.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\abcdef12-3456-7890-abcd-ef1234567890.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\f47ac10b-58cc-4372-a567-0e02b2c3d479.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\race\fedcba98-7654-3210-fedc-ba9876543210.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

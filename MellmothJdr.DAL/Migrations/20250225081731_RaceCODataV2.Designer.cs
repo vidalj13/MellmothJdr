@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250225081731_RaceCODataV2")]
+    partial class RaceCODataV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -212,7 +215,7 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("f47ac10b-58cc-4372-a567-0e02b2c3d479"),
                             DateCrea = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "L’humain se distingue par sa capacité d’adaptation et son instinct qui le pousse à coloniser tous les territoires qui l’entourent. La Race humaine est la plus représentée et la plus répandue dans les zones dites \"civilisées\".\r\n\r\nLes humains sont de jeunes loups ignorants, ils croissent et se multiplient sans aucun respect pour l’équilibre du monde, leur égoïsme et leur égocentrisme semblent sans limite. Ils mèneront le monde entier à la catastrophe si personne ne les arrête.",
+                            Description = "La race la plus répandue, caractérisée par sa grande adaptabilité et sa diversité culturelle.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             RaceLibelle = "Humains"
                         },
@@ -230,7 +233,7 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("a1b2c3d4-e5f6-47a8-90ab-cdef12345678"),
                             DateCrea = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Le Nain est petit mais robuste. Célèbre pour sa barbe, il aime les profondeurs de la terre, dont il extrait des métaux et des pierres précieuses. Isolé, il est généralement ouvert et chaleureux, mais la société naine peut paraître sévère car le travail et l’entraînement militaire y sont des obligations.\r\n\r\nLes Nains aiment amasser de l’or et boire de la bière en compagnie d’autres Nains. Ils sont un peu rustres et très susceptibles, un Nain peut se mettre en colère et devenir violent pour des raisons qui semblent étranges voire futiles à un autre peuple…",
+                            Description = "Robustes et endurants, les nains sont réputés pour leur expertise en artisanat et en forge ainsi que pour leur courage au combat.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             RaceLibelle = "Nains"
                         },
@@ -239,7 +242,7 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("01234567-89ab-cdef-0123-456789abcdef"),
                             DateCrea = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Le Demi-elfe a hérité des qualités de ses deux parents (humain et Elfe). Il est généralement traité avec condescendance parmi les Elfes et est considéré comme un Elfe parmi les humains.\r\n\r\nLes Demi-elfes sont des artistes hors-pair dotés d'une grande sensibilité. Toutefois, attention car ils sont beaux parleurs et manipulateurs : cachez vos filles et vos femmes, ils ont brisé plus d'un cœur et corrompu bien des dames de réputation vertueuse.",
+                            Description = "Issus de l'union entre humains et elfes, ils héritent d'atouts de ces deux univers, alliant souplesse et polyvalence.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             RaceLibelle = "Demi-Elfes"
                         },
@@ -248,7 +251,7 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("fedcba98-7654-3210-fedc-ba9876543210"),
                             DateCrea = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Le Halfelin est la plus petite des races jouables. Toujours bon vivant, souvent vif, curieux, et parfois farceur, c’est un incompris que les autres Races considèrent souvent comme turbulent, pénible, voire parfois comme un voleur.\r\n\r\nLes Halfelins sont inoffensifs et ne pensent qu’à bien manger. Toutefois, ne perdez jamais de vue leurs mains car se sont aussi des voleurs sans scrupules.",
+                            Description = "Petit peuple discret et ingénieux, reconnu pour sa capacité à se mouvoir sans être remarqué et à s'adapter à divers environnements.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             RaceLibelle = "Halfelins"
                         },
@@ -257,7 +260,7 @@ namespace MellmothJdr.DAL.Migrations
                             Id = new Guid("13579bdf-2468-ace0-bdf1-3579bdf24680"),
                             DateCrea = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Demi-orque\r\nLe Demi-orque est de grande taille. Issu de l’union souvent forcée d’une humaine et d’un Orque, il possède une force physique hors du commun. Il est généralement méprisé par les autres races, en particulier par les Nains et les Elfes.\r\n\r\nLes Demi-orques sont violents, sales et stupides, ils en veulent au monde entier de leur ignoble naissance et mieux vaut les éviter",
+                            Description = "Guerriers féroces, souvent en opposition avec les autres races, incarnant la force brute et l'esprit de combat.",
                             JeuId = new Guid("1c474c24-f5c9-470e-9b91-046b639275c3"),
                             RaceLibelle = "Demi-orques"
                         },

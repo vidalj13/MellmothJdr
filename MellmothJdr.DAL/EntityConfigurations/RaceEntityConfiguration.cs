@@ -29,7 +29,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     new ()
                     {
                         RaceLibelle = "Humains",
-                        Description = "La race la plus répandue, caractérisée par sa grande adaptabilité et sa diversité culturelle.",
+                        Description = "L’humain se distingue par sa capacité d’adaptation et son instinct qui le pousse à coloniser tous les territoires qui l’entourent. La Race humaine est la plus représentée et la plus répandue dans les zones dites \"civilisées\".\r\n\r\nLes humains sont de jeunes loups ignorants, ils croissent et se multiplient sans aucun respect pour l’équilibre du monde, leur égoïsme et leur égocentrisme semblent sans limite. Ils mèneront le monde entier à la catastrophe si personne ne les arrête.",
                         Id = Ids.Race.Humains,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
@@ -37,9 +37,9 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     },
                     new()
                     {
-                        RaceLibelle = "Elfique(s)",
-                        Description = "Ces êtres longs-vivants, souvent subdivisés (par exemple en elfes sylvains ou des bois), se distinguent par leur élégance et leur lien étroit  avec la nature.",
-                        Id = Ids.Race.Elfique,
+                        RaceLibelle = "Elfe, haut",
+                        Description = "Le Haut-elfe est un être féerique qui vit extrêmement longtemps. Il est méprisant envers les Nains et arrogant envers les autres races. Proche de la nature, il maîtrise aussi bien les arts de la magie que ceux de la guerre.\r\n\r\nLes Elfes se croient supérieurs à tous les autres, ce sont de puissants magiciens mais leur cœur est sans pitié. Ils obéissent à de très anciennes règles et à des serments incompréhensibles pour les Races à l’espérance de vie ordinaire.",
+                        Id = Ids.Race.ElfeHaut,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
@@ -47,7 +47,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     new ()
                     {
                         RaceLibelle = "Nains",
-                        Description = "Robustes et endurants, les nains sont réputés pour leur expertise en artisanat et en forge ainsi que pour leur courage au combat.",
+                        Description = "Le Nain est petit mais robuste. Célèbre pour sa barbe, il aime les profondeurs de la terre, dont il extrait des métaux et des pierres précieuses. Isolé, il est généralement ouvert et chaleureux, mais la société naine peut paraître sévère car le travail et l’entraînement militaire y sont des obligations.\r\n\r\nLes Nains aiment amasser de l’or et boire de la bière en compagnie d’autres Nains. Ils sont un peu rustres et très susceptibles, un Nain peut se mettre en colère et devenir violent pour des raisons qui semblent étranges voire futiles à un autre peuple…",
                         Id = Ids.Race.Nains,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
@@ -56,7 +56,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     new ()
                     {
                         RaceLibelle = "Demi-Elfes",
-                        Description = "Issus de l'union entre humains et elfes, ils héritent d'atouts de ces deux univers, alliant souplesse et polyvalence.",
+                        Description = "Le Demi-elfe a hérité des qualités de ses deux parents (humain et Elfe). Il est généralement traité avec condescendance parmi les Elfes et est considéré comme un Elfe parmi les humains.\r\n\r\nLes Demi-elfes sont des artistes hors-pair dotés d'une grande sensibilité. Toutefois, attention car ils sont beaux parleurs et manipulateurs : cachez vos filles et vos femmes, ils ont brisé plus d'un cœur et corrompu bien des dames de réputation vertueuse.",
                         Id = Ids.Race.DemiElfes,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
@@ -65,7 +65,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     new ()
                     {
                         RaceLibelle = "Halfelins",
-                        Description = "Petit peuple discret et ingénieux, reconnu pour sa capacité à se mouvoir sans être remarqué et à s'adapter à divers environnements.",
+                        Description = "Le Halfelin est la plus petite des races jouables. Toujours bon vivant, souvent vif, curieux, et parfois farceur, c’est un incompris que les autres Races considèrent souvent comme turbulent, pénible, voire parfois comme un voleur.\r\n\r\nLes Halfelins sont inoffensifs et ne pensent qu’à bien manger. Toutefois, ne perdez jamais de vue leurs mains car se sont aussi des voleurs sans scrupules.",
                         Id = Ids.Race.Halfelins,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
@@ -73,40 +73,31 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     },
                     new ()
                     {
-                        RaceLibelle = "Orques",
-                        Description = "Guerriers féroces, souvent en opposition avec les autres races, incarnant la force brute et l'esprit de combat.",
-                        Id = Ids.Race.Orques,
+                        RaceLibelle = "Demi-orques",
+                        Description = "Demi-orque\r\nLe Demi-orque est de grande taille. Issu de l’union souvent forcée d’une humaine et d’un Orque, il possède une force physique hors du commun. Il est généralement méprisé par les autres races, en particulier par les Nains et les Elfes.\r\n\r\nLes Demi-orques sont violents, sales et stupides, ils en veulent au monde entier de leur ignoble naissance et mieux vaut les éviter",
+                        Id = Ids.Race.DemiOrques,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
                     },
                     new ()
                     {
-                        RaceLibelle = "Gobelins",
-                        Description = "Créatures rusées et agiles, généralement associées aux orques, mais possédant leur propre culture et méthodes de survie.",
-                        Id = Ids.Race.Gobelins,
+                        RaceLibelle = "Elfe, sylvain",
+                        Description = "L’Elfe sylvain est issu d’une culture différente de celle des Hauts-elfes. Légèrement plus petits, ils vivent au plus profond des forêts, s’abritant dans les arbres et vivant simplement de la chasse et de la cueillette. Moins arrogants que leurs cousins Hauts-elfes, ils sont cependant beaucoup plus méfiants. Ils maitrisent particulièrement l’art du camouflage et l’utilisation de l’arc.\r\n\r\nLes Elfes sylvains sont de redoutables archers, ils détestent les cités et les gens qui y vivent, ils peuvent tuer d’une flèche dans le dos un paysan juste parce qu'il a coupé le mauvais arbre.",
+                        Id = Ids.Race.ElfeSylvain,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
                     },
                     new ()
                     {
-                        RaceLibelle = "Trolls",
-                        Description = "Connus pour leur force exceptionnelle et leur capacité de régénération, ils représentent un défi de taille pour les aventuriers.",
-                        Id = Ids.Race.Trolls,
+                        RaceLibelle = "Gnome",
+                        Description = "Le Gnome est une créature de petite taille pourvue d’un gros nez, d’une bonne nature et d’une curiosité insatiable pour la magie et les sciences. C’est un compagnon souvent agréable bien qu’un peu original. Les Nains et les Halfelins l’apprécient, tandis que les \"grandes\" races se montrent plutôt indifférentes à leur égard.\r\n\r\nLes Gnomes sont sympathiques mais à moitié fous, méfiez-vous comme de la peste de leurs inventions ou de leurs projets farfelus.",
+                        Id = Ids.Race.Gnome,
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
                         DateMaj = dateInit
-                    },
-                    new ()
-                    {
-                        RaceLibelle = "Drakéides",
-                        Description = "Dotés de traits reptiliens et parfois liés à l'héritage des dragons, ces êtres apportent une dimension mystique et redoutable à l'univers.",
-                        Id = Ids.Race.Drakeides,
-                        JeuId = Ids.Jeux.ChroniquesOublies,
-                        DateCrea = dateInit,
-                        DateMaj = dateInit
-                    },
+                    }
             });
         }
     }
