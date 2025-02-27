@@ -4,49 +4,48 @@
 @inherits BaseFichePersoFormComponent;
 
 
+
 <MudGrid>
-    <MudItem xs="12" sm="12">
+    <MudItem xs="12" sm="6">
         <MudPaper Class="pa-4">
-            <MudForm Model="@BaseFichePerso" Spacing="10" @ref="Form">
+            <MudForm Spacing="@spacing" @ref="Form1">
+                <MudTextField T="string" Label="@Texte.Nom" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Nom)" Adornment="Adornment.None" @bind-Value="@BaseFichePerso.Nom" />
+                <MudNumericField T="int" Label="@Texte.Lvl" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Lvl)" @bind-Value="@BaseFichePerso.Niveau" />
                 <MudGrid>
-                    <MudItem xs="12" sm="6">
-                        <MudTextField T="string" Label="@Texte.Nom" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Nom)" @bind-Value="@BaseFichePerso.Nom" />
-                        <MudNumericField T="int" Label="@Texte.Lvl" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Lvl)" @bind-Value="@BaseFichePerso.Niveau" />
-
-                        <MudGrid>
-                            <MudItem xs="12" sm="4">
-                                <MudSwitch @bind-Value="IsRaceCustom" Label="@Texte.RacePersonnalisee" Color="Color.Primary" />
-                            </MudItem>
-                            <MudItem xs="12" sm="8">
-                                        @if (Races.Any() && !IsRaceCustom)
-                                        {
-                                            <MudSelect T="Race" Label="@Texte.Race" MultiSelection="false" @bind-Value="BaseFichePerso.Race">
-                                                @foreach (var race in Races)
-                                                {
-                                                    <MudSelectItem T="Race" Tooltip="" Value="@race">
-                                                        <CustomTooltipWithImage SrcImage="@($"img/race/{race.Id}.jpg")" Titre="@race.RaceLibelle" Description="@race.Description" Arrow="true" Placement="Placement.Right" Width="500" />
-
-                                                    </MudSelectItem>
-                                                }
-                                            </MudSelect>
-                                        }
-                                        else
-                                        {
-                                            <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
-                                        }
-
-                            </MudItem>
-                        </MudGrid>
-
-                        <MudNumericField T="int" Label="@Texte.Pv" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Pv)" @bind-Value="@BaseFichePerso.PvMax" />
+                    <MudItem xs="12" sm="4">
+                        <MudSwitch @bind-Value="IsRaceCustom" Label="@Texte.RacePersonnalisee" Color="Color.Primary" />
                     </MudItem>
-                    <MudItem xs="12" sm="6">
-                        <MudNumericField T="int" Label="@Texte.Taille" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Taille)" @bind-Value="@BaseFichePerso.TailleCm" />
-                        <MudNumericField T="int" Label="@Texte.Poid" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Poid)" @bind-Value="@BaseFichePerso.PoidKg" />
-                        <MudNumericField T="int" Label="@Texte.Age" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Age)" @bind-Value="@BaseFichePerso.Age" />
-                        <MudTextField T="string" Label="@Texte.Religion" Required="false" @bind-Value="@BaseFichePerso.Religion" />
+                    <MudItem xs="12" sm="8">
+                        @if (Races.Any() && !IsRaceCustom)
+                        {
+                            <MudSelect T="Race" Label="@Texte.Race" MultiSelection="false" @bind-Value="BaseFichePerso.Race">
+                                @foreach (var race in Races)
+                                {
+                                    <MudSelectItem T="Race" Tooltip="" Value="@race">
+                                        <CustomTooltipWithImage SrcImage="@($"img/race/{race.Id}.jpg")" Titre="@race.RaceLibelle" Description="@race.Description" Arrow="true" Placement="Placement.Right" Width="500" />
+
+                                    </MudSelectItem>
+                                }
+                            </MudSelect>
+                        }
+                        else
+                        {
+                            <MudTextField T="string" Label="@Texte.Race" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Race)" @bind-Value="@BaseFichePerso.RaceLibelle" />
+                        }
                     </MudItem>
                 </MudGrid>
+                <MudNumericField T="int" Label="@Texte.Pv" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Pv)" @bind-Value="@BaseFichePerso.PvMax" />
+            </MudForm>
+        </MudPaper>
+    </MudItem>
+
+    <MudItem xs="12" sm="6">
+        <MudPaper Class="pa-4">
+            <MudForm Spacing="@spacing" @ref="Form2">
+                <MudNumericField T="int" Label="@Texte.Taille" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Taille)" @bind-Value="@BaseFichePerso.TailleCm" />
+                <MudNumericField T="int" Label="@Texte.Poid" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Poid)" @bind-Value="@BaseFichePerso.PoidKg" />
+                <MudNumericField T="int" Label="@Texte.Age" Required="true" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Age)" @bind-Value="@BaseFichePerso.Age" />
+                <MudTextField T="string" Label="@Texte.Religion" Required="false" @bind-Value="@BaseFichePerso.Religion" />
             </MudForm>
         </MudPaper>
     </MudItem>

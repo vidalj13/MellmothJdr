@@ -8,13 +8,13 @@
 {
     @if (Ids.Jeux.ChroniquesOublies == GameId)
     {
-
-        <BaseFichePersoForm BaseFichePerso="FichePersoChroniquesOublies" Races="@Races" @ref="FormBase" />
+        
+                    <BaseFichePersoForm BaseFichePerso="FichePersoChroniquesOublies" Races="@Races" @ref="FormBase" />
 
         <MudGrid>
             <MudItem xs="12" sm="12">
-                <MudPaper Class="pa-4">
-                    <MudForm Model="@BaseFichePerso" Spacing="10" @ref="Form">
+                <MudPaper Class="pa-4  mt-4">
+                    <MudForm Model="@BaseFichePerso" Spacing="4" @ref="Form">
                         <MudGrid>
                             <MudItem xs="12" sm="6">
                                 <MudSelect T="Classe" Label="@Texte.Classe" MultiSelection="false" @bind-Value="ClasseSelected" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Classe)">

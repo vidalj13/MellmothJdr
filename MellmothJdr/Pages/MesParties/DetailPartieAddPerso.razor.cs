@@ -22,7 +22,14 @@ public class DetailPartieAddPersoPage : AuthenticatedPage
     protected List<Classe> Classes { get; set; } = new List<Classe>();
     public BaseFichePersoFormComponent FormBase { get; set; }
     public BaseFichePersoEntity BaseFichePerso { get; set; } = new();
-    public FichePersoChroniquesOublies FichePersoChroniquesOublies { get; set; } = new();
+    public FichePersoChroniquesOublies FichePersoChroniquesOublies { get; set; } = new()
+    {
+        Niveau = 1,
+        PoidKg = 30,
+        Age = 25,
+        TailleCm = 182,
+        PvMax = 10
+    };
     public MudForm Form { get; set; }
     public Classe ClasseSelected { get; set; }
     protected override async Task LoadAsync()
