@@ -1,6 +1,5 @@
 ﻿using MellmothJdr.DAL.Entities.Base;
-using MellmothJdr.DAL.Entities.FichesPersos;
-
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
 using NotificationManager.Infrastructure.Entities.Base;
 
 namespace MellmothJdr.DAL.Entities

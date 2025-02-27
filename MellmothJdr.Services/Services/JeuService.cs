@@ -1,6 +1,6 @@
 using MellmothJdr.Commun.Constantes;
 using MellmothJdr.DAL.Entities;
-using MellmothJdr.DAL.Entities.FichesPersos;
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
 using MellmothJdr.Services.Dto;
 using MellmothJdr.Services.IServices;
 

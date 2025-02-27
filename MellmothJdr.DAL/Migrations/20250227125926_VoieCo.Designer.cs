@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250227125926_VoieCo")]
+    partial class VoieCo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -344,53 +347,6 @@ namespace MellmothJdr.DAL.Migrations
                     b.HasIndex("ClasseId");
 
                     b.ToTable("VoieChroniquesOublies", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("47788de0-28be-470f-b149-5ed087db1f3a"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Voie de la guerre",
-                            Libelle = "Voie de la guerre"
-                        },
-                        new
-                        {
-                            Id = new Guid("ef0fc838-dfc8-4b86-a91f-1cacd56375d1"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Voie du héro",
-                            Libelle = "Voie du héro"
-                        },
-                        new
-                        {
-                            Id = new Guid("80449956-ec6c-4df1-b15c-27f99879be26"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Voie du meneur d'home",
-                            Libelle = "Voie du meneur d'home"
-                        },
-                        new
-                        {
-                            Id = new Guid("c215d7a1-dc5c-4e6d-96e2-684c4c68d73f"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Voie du Cavalier",
-                            Libelle = "Voie du Cavalier"
-                        },
-                        new
-                        {
-                            Id = new Guid("f09f1552-4ac4-4dd3-bef5-da23e25f7d14"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Voie de la noblesse",
-                            Libelle = "Voie de la noblesse"
-                        });
                 });
 
             modelBuilder.Entity("MellmothJdr.DAL.Entities.Jeu", b =>

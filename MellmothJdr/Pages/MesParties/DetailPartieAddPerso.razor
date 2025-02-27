@@ -8,45 +8,13 @@
 {
     @if (Ids.Jeux.ChroniquesOublies == GameId)
     {
-        
-                    <BaseFichePersoForm BaseFichePerso="FichePersoChroniquesOublies" Races="@Races" @ref="FormBase" />
 
-        <MudGrid>
-            <MudItem xs="12" sm="12">
-                <MudPaper Class="pa-4  mt-4">
-                    <MudForm Model="@BaseFichePerso" Spacing="4" @ref="Form">
-                        <MudGrid>
-                            <MudItem xs="12" sm="6">
-                                <MudSelect T="Classe" Label="@Texte.Classe" MultiSelection="false" @bind-Value="ClasseSelected" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Classe)">
-                                    @foreach (var classe in Classes)
-                                    {
-                                        <MudSelectItem T="Classe" Tooltip="" Value="@classe">
-                                            <CustomTooltipWithImage SrcImage="@($"img/classe/{classe.Id}.jpg")" Titre="@classe.Libelle" Description="@classe.Description" Arrow="true" Placement="Placement.Right" Width="500" />
-                                        </MudSelectItem>
-                                    }
-                                </MudSelect>
-                            </MudItem>
-                        </MudGrid>
-                    </MudForm>
-                </MudPaper>
-            </MudItem>
-        </MudGrid>
+        <FichePersoChroniqueOublieForm GameId="@GameId" MyGameId="@MyGameId" />
     }
     else
     {
-        <BaseFichePersoForm BaseFichePerso="BaseFichePerso" Races="@Races" @ref="FormBase" />
+       
     }
-
-    <MudGrid>
-        <MudItem xs="12" sm="12">
-            <MudPaper Class="pa-4 mt-4">
-                <MudButton Variant="Variant.Filled" Color="Color.Primary" DropShadow="false" OnClick="@(Save)"
-                           StartIcon="@Icons.Material.Filled.Save">@Texte.Save</MudButton>
-                <MudButton Variant="Variant.Filled" Color="Color.Secondary" DropShadow="false" OnClick="@(Back)" Class="mx-2"
-                           StartIcon="@Icons.Material.Filled.Cancel">@Texte.Cancel</MudButton>
-            </MudPaper>
-        </MudItem>
-    </MudGrid>
 
 }
 else

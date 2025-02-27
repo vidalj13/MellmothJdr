@@ -1,6 +1,9 @@
-﻿using MellmothJdr.DAL.Entities.Base;
+﻿using System.Security.Cryptography.X509Certificates;
+
+using MellmothJdr.DAL.Entities.Base;
 using MellmothJdr.DAL.Entities.FichesPersos;
-using MellmothJdr.DAL.Entities.Jointures;
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies.Jointures;
 
 namespace MellmothJdr.DAL.Entities
 {
@@ -12,5 +15,6 @@ namespace MellmothJdr.DAL.Entities
         public Jeu Jeu { get; set; }
 
         public List<JoinFichePersoChroniquesOubliesClasse> JoinFichePersoChroniquesOubliesClasses { get; set; }
+        public List<VoieChroniquesOublies> VoieChroniquesOublies { get; set; }
     }
 }

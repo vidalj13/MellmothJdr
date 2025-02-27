@@ -1,4 +1,4 @@
-﻿using MellmothJdr.DAL.Entities.Jointures;
+﻿using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies.Jointures;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -21,6 +21,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
             builder.HasOne(x => x.FichePersoChroniquesOublies)
                 .WithMany(x => x.JoinFichePersoChroniquesOubliesClasses)
                 .HasForeignKey(x => x.FichePersoChroniquesOubliesId);
+
         }
     }
 }

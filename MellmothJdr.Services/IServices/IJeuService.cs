@@ -1,5 +1,5 @@
 ﻿using MellmothJdr.DAL.Entities;
-using MellmothJdr.DAL.Entities.FichesPersos;
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
 using MellmothJdr.Services.Dto;
 
 namespace MellmothJdr.Services.IServices

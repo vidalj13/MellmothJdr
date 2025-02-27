@@ -1,6 +1,5 @@
 using MellmothJdr.DAL.Entities;
-using MellmothJdr.DAL.Entities.FichesPersos;
-
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -20,6 +19,7 @@ namespace NotificationManager.Infrastructure
         public DbSet<Race> Races { get; set; }
         public DbSet<Classe> Classes { get; set; }
         public DbSet<Partie> Parties { get; set; }
+        public DbSet<VoieChroniquesOublies> VoieChroniquesOublies { get; set; }
         public DbSet<FichePersoChroniquesOublies> FichesPersoChroniquesOublies { get; set; }
     }
 }

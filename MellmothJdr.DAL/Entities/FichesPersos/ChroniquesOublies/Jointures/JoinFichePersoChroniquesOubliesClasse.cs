@@ -1,7 +1,7 @@
 ﻿using MellmothJdr.DAL.Entities.Base;
-using MellmothJdr.DAL.Entities.FichesPersos;
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
 
-namespace MellmothJdr.DAL.Entities.Jointures
+namespace MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies.Jointures
 {
     public class JoinFichePersoChroniquesOubliesClasse : BaseEntity
     {

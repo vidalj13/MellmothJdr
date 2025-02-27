@@ -1,6 +1,5 @@
 ﻿using MellmothJdr.DAL.Entities;
-using MellmothJdr.DAL.Entities.FichesPersos;
-
+using MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
