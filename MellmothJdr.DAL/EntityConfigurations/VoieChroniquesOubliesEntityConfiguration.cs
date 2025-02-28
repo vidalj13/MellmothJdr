@@ -30,6 +30,14 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
             PopulateChevalier(data);
             PopulateDruide(data);
             PopulateEnsorceleur(data);
+            PopulateWar(data);
+            PopulateForgesort(data);
+            PopulateMagicien(data);
+            PopulatePretre(data);
+            PopulateMoine(data);
+            PopulateRodeur(data);
+            PopulateVoleur(data);
+            PopulateNecromancien(data);
             builder.HasData(
                 data);
         }
@@ -254,6 +262,365 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
             });
         }
 
+        private void PopulateForgesort(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Forgesort,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie des artefacts",
+                    Id  = Ids.ChroniqueOublie.Voie.Artefacts,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Forgesort,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie des élixirs",
+                    Id  = Ids.ChroniqueOublie.Voie.Elixirs,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Forgesort,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du métal",
+                    Id  = Ids.ChroniqueOublie.Voie.Metal,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Forgesort,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du golem",
+                    Id  = Ids.ChroniqueOublie.Voie.Golem,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Forgesort,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie des runes",
+                    Id  = Ids.ChroniqueOublie.Voie.Runes
+                },
+            });
+        }
+
+        private void PopulateWar(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Guerrier,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du bouclier",
+                    Id  = Ids.ChroniqueOublie.Voie.Bouclier,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Guerrier,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du combat",
+                    Id  = Ids.ChroniqueOublie.Voie.Combat,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Guerrier,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du maître d'armes",
+                    Id  = Ids.ChroniqueOublie.Voie.armes,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Guerrier,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la résistance",
+                    Id  = Ids.ChroniqueOublie.Voie.Resistance,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Guerrier,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du soldat",
+                    Id  = Ids.ChroniqueOublie.Voie.Soldats
+                },
+            });
+        }
+
+        private void PopulateMagicien(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Magicien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la magie des arcanes",
+                    Id  = Ids.ChroniqueOublie.Voie.Magiearcanes,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Magicien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la magie destructrice",
+                    Id  = Ids.ChroniqueOublie.Voie.Magiedestructrice,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Magicien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la magie élémentaire",
+                    Id  = Ids.ChroniqueOublie.Voie.Magieélémentaire,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Magicien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la magie protectrice",
+                    Id  = Ids.ChroniqueOublie.Voie.Magieprotectrice,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Magicien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la magie universelle",
+                    Id  = Ids.ChroniqueOublie.Voie.Magieuniverselle
+                },
+            });
+        }
+
+        private void PopulateMoine(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Moine,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de l’énergie vitale",
+                    Id  = Ids.ChroniqueOublie.Voie.MoineVitale,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Moine,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la maîtrise",
+                    Id  = Ids.ChroniqueOublie.Voie.MoineMaitrise,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Moine,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la méditation",
+                    Id  = Ids.ChroniqueOublie.Voie.MoineMeditation,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Moine,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du poing",
+                    Id  = Ids.ChroniqueOublie.Voie.MoinePoing,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Moine,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du vent",
+                    Id  = Ids.ChroniqueOublie.Voie.MoineVent
+                },
+            });
+        }
+
+        private void PopulateNecromancien(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Necromancien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du démon",
+                    Id  = Ids.ChroniqueOublie.Voie.NecromancienDemon,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Necromancien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la mort",
+                    Id  = Ids.ChroniqueOublie.Voie.NecromancienMort,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Necromancien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de l’outre-tombe",
+                    Id  = Ids.ChroniqueOublie.Voie.NecromancienTombe,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Necromancien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du sang",
+                    Id  = Ids.ChroniqueOublie.Voie.NecromancienSang,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Necromancien,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la sombre magie",
+                    Id  = Ids.ChroniqueOublie.Voie.NecromancienMagie
+                },
+            });
+        }
+
+        private void PopulatePretre(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Pretre,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la foi",
+                    Id  = Ids.ChroniqueOublie.Voie.PretreFoi,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Pretre,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la guerre",
+                    Id  = Ids.ChroniqueOublie.Voie.PretreGuerre,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Pretre,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la prière",
+                    Id  = Ids.ChroniqueOublie.Voie.PretrePriere,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Pretre,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie des soins",
+                    Id  = Ids.ChroniqueOublie.Voie.PretreSoins,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Pretre,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la spiritualité",
+                    Id  = Ids.ChroniqueOublie.Voie.PretreSpiritualite
+                },
+            });
+        }
+
+        private void PopulateRodeur(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Rodeur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de l’archer",
+                    Id  = Ids.ChroniqueOublie.Voie.RodeurArcher ,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Rodeur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du compagnon animal",
+                    Id  = Ids.ChroniqueOublie.Voie.RodeurCompagnonAnimal ,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Rodeur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de l’escarmouche",
+                    Id  = Ids.ChroniqueOublie.Voie.RodeurEscarmouche ,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Rodeur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de la survie",
+                    Id  = Ids.ChroniqueOublie.Voie.RodeurSurvie ,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Rodeur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du traqueur",
+                    Id  = Ids.ChroniqueOublie.Voie.RodeurTraqueur 
+                },    new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Rodeur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du montreur d’ours",
+                    Id  = Ids.ChroniqueOublie.Voie.RodeurMontreurOurs 
+                },
+            });
+        }
+
+        private void PopulateVoleur(List<VoieChroniquesOublies> data)
+        {
+            data.AddRange(new List<VoieChroniquesOublies>()
+            {
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Voleur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de l’assassin",
+                    Id  = Ids.ChroniqueOublie.Voie.VoleurAssassin,
+                },
+                new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Voleur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie de l’aventurier",
+                    Id  = Ids.ChroniqueOublie.Voie.VoleurAventurier,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Voleur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du déplacement",
+                    Id  = Ids.ChroniqueOublie.Voie.VoleurDeplacement,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Voleur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du roublard",
+                    Id  = Ids.ChroniqueOublie.Voie.VoleurRoublard,
+                },      new()
+                {
+                    ClasseId =  Ids.ChroniqueOublie.Classe.Voleur,
+                    DateCrea = dateInit,
+                    DateMaj = dateInit,
+                    Libelle = "Voie du spadassin",
+                    Id  = Ids.ChroniqueOublie.Voie.VoleurSpadassin
+                },
+            });
+        }
+
         private void PopulateChevalier(List<VoieChroniquesOublies> data)
         {
             data.AddRange(new List<VoieChroniquesOublies>()
@@ -299,41 +666,3 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
