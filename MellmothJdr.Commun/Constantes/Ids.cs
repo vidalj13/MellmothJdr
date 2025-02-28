@@ -45,6 +45,31 @@
                 public static Guid Cavalier = new Guid("C215D7A1-DC5C-4E6D-96E2-684C4C68D73F");
                 public static Guid Noblesse = new Guid("F09F1552-4AC4-4DD3-BEF5-DA23E25F7D14");
                 public static Guid Guerre = new Guid("47788DE0-28BE-470F-B149-5ED087DB1F3A");
+                public static Guid Artilleur = new Guid("0386A871-CF49-4077-9525-9426DC14116A");
+                public static Guid Explosifs = new Guid("6A50B874-A765-4C6D-8854-B391D8A446FA");
+                public static Guid ChampsDeBataille = new Guid("896CE611-3ECE-4EFE-99D3-EB89F3CD8358");
+                public static Guid Pistolero = new Guid("3F9DC814-E5F8-4872-9B03-FC9A10A3C134");
+                public static Guid Precision = new Guid("242D65CC-EC94-4924-B9F9-1B7DA767BE57");
+                public static Guid Brute = new Guid("4B83C273-170D-4CDF-BA27-46EA7EE53104");
+                public static Guid Pagnes = new Guid("A68A8347-D8A3-4166-92F1-068542471942");
+                public static Guid Pourfendeur = new Guid("D3DF1F26-ACD5-4778-BFCB-2CFC5F13D32E");
+                public static Guid Primitif = new Guid("6526792F-73DF-4BCD-93F4-61A118306E05");
+                public static Guid Rage = new Guid("6522263C-BD63-43B4-B861-C6AFC6B8C2DF");
+                public static Guid Escrime = new Guid("30D0645E-C314-4A2E-BBDF-027CB116BD48");
+                public static Guid Musicien = new Guid("8437DDD7-3735-4AB3-9F2E-A36FA1C545AD");
+                public static Guid Saltimbanque = new Guid("A4F66035-8813-4CC2-BAF2-68BD3245651C");
+                public static Guid Seduction = new Guid("8EC3F722-C4BA-4686-93D4-7DDB429C766D");
+                public static Guid Vagabond = new Guid("AF7F4ED7-A88F-4770-B529-E86B60141789");
+                public static Guid Animaux = new Guid("B8A9904A-A3BC-455A-A332-E4BB25019446");
+                public static Guid Fauve = new Guid("88C40EDE-AFB8-4896-94F5-46006413F52E");
+                public static Guid Nature = new Guid("0B6DCBE7-1BBD-4BE1-ACEC-C1DA36E2211A");
+                public static Guid Protecteur = new Guid("83FD315F-81CB-4319-93C9-7592F591B9A3");
+                public static Guid Vegetaux = new Guid("877805F5-6848-481E-91F9-5A73A12A6831");
+                public static Guid Air = new Guid("DDB271B5-C0D0-4938-93BC-5AF13F81EB6B");
+                public static Guid Divination = new Guid("ABD8238A-53A7-4B6E-8C3D-284B51FCF822");
+                public static Guid Envouteur = new Guid("B24CF994-3B21-4835-A1AC-0555ADC1A1DA");
+                public static Guid Illusions = new Guid("323D7866-E565-4D85-9EAC-E7CB4D9AE814");
+                public static Guid Invocationx = new Guid("DCE8CA92-FA58-4828-8422-F103FF74BD42");
             }
         }
     }
