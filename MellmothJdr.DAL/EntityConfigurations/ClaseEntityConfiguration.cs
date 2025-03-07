@@ -9,6 +9,119 @@ using Seedwork.EntityFramework.Extensions;
 namespace NotificationManager.Infrastructure.EntityConfigurations
 {
 
+    internal class ArmeStartEntityConfiguration : IEntityTypeConfiguration<ArmeStart>
+    {
+        public void Configure(EntityTypeBuilder<ArmeStart> builder)
+        {
+            builder.ToTable("ArmeStart");
+            builder.ConfigureBaseEntity();
+
+            builder.Property(x => x.Libelle)
+                .HasColumnType("varchar(200)");
+
+            builder.HasOne(x => x.Classe)
+                .WithMany(x => x.ArmesStarts)
+                .HasForeignKey(x => x.ClasseId);
+
+            DateTime dateInit = new(2025, 02, 25);
+            builder.HasData(
+                new List<ArmeStart>() {
+                    new()
+                    {
+                        Libelle = "Pétoire",
+                        Id = new Guid("626B4CBC-24FD-4CF4-B0B8-6CE09644A9E1\r\n"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Arquebusier,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 10,
+                        PorteEnM = 20,
+                        NumbreDeAttaque = 1
+                    },
+                    new()
+                    {
+                        Libelle = "Epée longue",
+                        Id = new Guid("7B82ED7E-BA93-4373-939E-28AC1721C088"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Arquebusier,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 8,
+                        NumbreDeAttaque = 1,
+                        PorteEnM = null
+                    },
+                    new()
+                    {
+                        Libelle = "Dague",
+                        Id = new Guid("E71E64CA-B497-45DC-B4B3-40F89A28540E"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Arquebusier,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 4,
+                        NumbreDeAttaque = 1,
+                        PorteEnM = null
+                    },  
+                    new()
+                    {
+                        Libelle = "Dague",
+                        Id = new Guid("BF7E1989-9173-4E2C-84C3-0A12F089C3E1"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Barbare,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 4,
+                        NumbreDeAttaque = 1,
+                        PorteEnM = null
+                    },   new()
+                    {
+                        Libelle = "Hache à 2 mains",
+                        Id = new Guid("FD4B96F6-715A-43AB-9113-3CC1273AA66B"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Barbare,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 6,
+                        NumbreDeAttaque = 2,
+                        PorteEnM = null
+                    },   new()
+                    {
+                        Libelle = "2 javelots",
+                        Id = new Guid("739F46E1-8EF3-4F2A-926A-B5A04AD8D867"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Barbare,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 6,
+                        NumbreDeAttaque = 1,
+                        PorteEnM = 20
+                    },
+                    new()
+                    {
+                        Libelle = "Rapiere",
+                        Id = new Guid("DEEDD7E0-F790-4ADA-B987-D95B9C09D45B"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Barde,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 6,
+                        NumbreDeAttaque = 1,
+                        MinCritique = 19
+                    },
+                    new()
+                    {
+                        Libelle = "Dague",
+                        Id = new Guid("9E473523-4C62-42C1-884B-E7F72048894A"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Barde,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeAttaque = 4,
+                        NumbreDeAttaque = 1
+                    },
+                    new()
+                    {
+                        Libelle = "Instrument de musique",
+                        Id = new Guid("C3CE1D4D-9A6F-4D5D-B2A6-DCCF92AFB9C2"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.Barde,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit
+                    },
+                });
+        }
+    }
     internal class ClaseEntityConfiguration : IEntityTypeConfiguration<Classe>
     {
         public void Configure(EntityTypeBuilder<Classe> builder)
@@ -20,6 +133,8 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                 .HasColumnType("varchar(200)");
             builder.Property(x => x.Description)
                 .HasColumnType("varchar(max)");
+            builder.Property(x => x.ArmeArmure)
+                .HasColumnType("varchar(max)");
             builder.HasOne(x => x.Jeu)
                 .WithMany(x => x.Classes)
                 .HasForeignKey(x => x.JeuId);
@@ -27,7 +142,6 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
             DateTime dateInit = new(2025, 02, 25);
             builder.HasData(
                 new List<Classe>() {
-
                     new()
                     {
                         Libelle = "Arquebusier",
@@ -35,7 +149,10 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         Description = "L’Arquebusier est un dur à cuire, un soldat ou un mercenaire habitué des champs de bataille. C’est un spécialiste du combat à distance et plus particulièrement des armes à feu et des explosifs.",
                         DateCrea = dateInit,
-                        DateMaj = dateInit
+                        DateMaj = dateInit,
+                        ArmeArmure = "L’Arquebusier sait manier toutes les armes de contact à une main, les armes à distance et les armes à poudre. Il peut porter jusqu’à la chemise de maille et ne manie pas de bouclier.",
+                        ArmureStart = "Armure de cuir",
+                        ModificateurArmureStart = 2,
                     },
 
                     new()
@@ -45,7 +162,10 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         Description ="Le Barbare est un combattant sauvage issu d’une culture primitive. Il affronte ses ennemis avec rage sans se cacher derrière une lourde armure.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
-                        DateMaj = dateInit
+                        DateMaj = dateInit,
+                        ArmeArmure = "Le Barbare sait manier toutes les armes au contact, toutes les armes à distance (sauf les arbalètes et les armes d’une technologie trop complexe). Il peut porter jusqu’à l’armure de cuir et manier le bouclier.",
+                        ArmureStart = "Armure de cuir",
+                        ModificateurArmureStart = 2,       
                     },
 
                     new()
@@ -55,7 +175,10 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         Description ="Le Barde est un personnage polyvalent qui utilise la magie et le spectacle pour divertir et parvenir à ses fins. Il est aussi habitué aux ruses qu’à la diplomatie.\r\n",
                         JeuId = Ids.Jeux.ChroniquesOublies,
                         DateCrea = dateInit,
-                        DateMaj = dateInit
+                        DateMaj = dateInit,
+                        ArmeArmure = "Le Barde sait manier les armes à 1 main. Il peut porter jusqu’à l’armure de cuir renforcée et ne peut pas manier le bouclier.",
+                        ArmureStart = "Armure de cuir",
+                        ModificateurArmureStart = 2,       
                     },
 
                     new()
