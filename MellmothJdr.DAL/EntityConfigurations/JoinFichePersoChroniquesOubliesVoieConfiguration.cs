@@ -23,5 +23,5 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                 .HasForeignKey(x => x.FichePersoChroniquesOubliesId);
 
         }
-    }
+    }   
 }

@@ -7,6 +7,7 @@ namespace MellmothJdr.DAL.Entities.FichesPersos.ChroniquesOublies
     {
         public string Libelle { get; set;}
         public List<JoinFichePersoChroniquesOubliesVoie> JoinFichePersoChroniquesOubliesVoies { get; set; }
+        public List<TalentChroniquesOublies> TalentsChroniquesOubliesVoies { get; set; }
 
         public Guid ClasseId { get; set;}
         public Classe Classe { get; set;}
