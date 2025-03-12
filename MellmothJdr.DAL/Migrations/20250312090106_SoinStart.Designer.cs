@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransverseApiSessionCDR.Infrastructure;
 
@@ -11,9 +12,11 @@ using TransverseApiSessionCDR.Infrastructure;
 namespace MellmothJdr.DAL.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    partial class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20250312090106_SoinStart")]
+    partial class SoinStart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,16 +53,10 @@ namespace MellmothJdr.DAL.Migrations
                     b.Property<int?>("MinCritique")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ModificateurDef")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("NombreDeAttaque")
+                    b.Property<int?>("NumbreDeAttaque")
                         .HasColumnType("int");
 
                     b.Property<int?>("PorteEnM")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Quantite")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -77,7 +74,7 @@ namespace MellmothJdr.DAL.Migrations
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 10,
                             Libelle = "Pétoire",
-                            NombreDeAttaque = 1,
+                            NumbreDeAttaque = 1,
                             PorteEnM = 20
                         },
                         new
@@ -87,8 +84,8 @@ namespace MellmothJdr.DAL.Migrations
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 8,
-                            Libelle = "Épée longue",
-                            NombreDeAttaque = 1
+                            Libelle = "Epée longue",
+                            NumbreDeAttaque = 1
                         },
                         new
                         {
@@ -98,7 +95,7 @@ namespace MellmothJdr.DAL.Migrations
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 4,
                             Libelle = "Dague",
-                            NombreDeAttaque = 1
+                            NumbreDeAttaque = 1
                         },
                         new
                         {
@@ -108,7 +105,7 @@ namespace MellmothJdr.DAL.Migrations
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 4,
                             Libelle = "Dague",
-                            NombreDeAttaque = 1
+                            NumbreDeAttaque = 1
                         },
                         new
                         {
@@ -118,7 +115,7 @@ namespace MellmothJdr.DAL.Migrations
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 6,
                             Libelle = "Hache à 2 mains",
-                            NombreDeAttaque = 2
+                            NumbreDeAttaque = 2
                         },
                         new
                         {
@@ -127,10 +124,9 @@ namespace MellmothJdr.DAL.Migrations
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 6,
-                            Libelle = "Javelots",
-                            NombreDeAttaque = 1,
-                            PorteEnM = 20,
-                            Quantite = 2
+                            Libelle = "2 javelots",
+                            NumbreDeAttaque = 1,
+                            PorteEnM = 20
                         },
                         new
                         {
@@ -139,9 +135,9 @@ namespace MellmothJdr.DAL.Migrations
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 6,
-                            Libelle = "Rapière",
+                            Libelle = "Rapiere",
                             MinCritique = 19,
-                            NombreDeAttaque = 1
+                            NumbreDeAttaque = 1
                         },
                         new
                         {
@@ -151,7 +147,7 @@ namespace MellmothJdr.DAL.Migrations
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeAttaque = 4,
                             Libelle = "Dague",
-                            NombreDeAttaque = 1
+                            NumbreDeAttaque = 1
                         },
                         new
                         {
@@ -160,302 +156,6 @@ namespace MellmothJdr.DAL.Migrations
                             DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Libelle = "Instrument de musique"
-                        },
-                        new
-                        {
-                            Id = new Guid("7888a9a2-d597-4a0f-8cbb-ccb6e5422f95"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 8,
-                            Libelle = "Épée longue",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("bb7c369a-6100-4489-a322-d09a5ed6b817"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Libelle = "Grand bouclier",
-                            ModificateurDef = 2
-                        },
-                        new
-                        {
-                            Id = new Guid("9b57d933-1e10-4db7-84fc-5000ca09b095"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Lance de cavalerie",
-                            NombreDeAttaque = 2
-                        },
-                        new
-                        {
-                            Id = new Guid("61fcd1a9-4b67-4afa-a7bb-caee1f26fc34"),
-                            ClasseId = new Guid("c67e5709-a257-4dcd-9250-6c2786327091"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("a6c8a462-465c-4b63-b2bd-4ffd608fb3e9"),
-                            ClasseId = new Guid("a91093ab-cdec-4d36-8e30-9393a955c382"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Bâton",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("694d75ca-3359-4c28-8090-9c0e61a120e4"),
-                            ClasseId = new Guid("a91093ab-cdec-4d36-8e30-9393a955c382"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("6ec5814d-5d81-4663-b4fd-64c387533e1c"),
-                            ClasseId = new Guid("a91093ab-cdec-4d36-8e30-9393a955c382"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Arc court",
-                            NombreDeAttaque = 1,
-                            PorteEnM = 30
-                        },
-                        new
-                        {
-                            Id = new Guid("c376c16c-9a4a-4207-9c90-4a567d58753e"),
-                            ClasseId = new Guid("2048962d-f0d3-460b-a054-fae5ea578cc3"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Bâton ferré",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("e00ea4c0-9a49-4188-9561-5fd7851dbc2c"),
-                            ClasseId = new Guid("2048962d-f0d3-460b-a054-fae5ea578cc3"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("51eb1cf4-819e-4ce7-8f9f-7fd11342dbdb"),
-                            ClasseId = new Guid("7b00f70a-4e76-4d4c-8df5-c7ffe0022c20"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("ce5fe204-9c4d-4b53-ac11-00c6b2c0ee6f"),
-                            ClasseId = new Guid("7b00f70a-4e76-4d4c-8df5-c7ffe0022c20"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Bâton ferré",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("c8e989c4-158b-4ba6-8d6c-822299afc517"),
-                            ClasseId = new Guid("7b00f70a-4e76-4d4c-8df5-c7ffe0022c20"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Marteau",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("7da8f40c-da14-4e51-804b-9a27af8b9741"),
-                            ClasseId = new Guid("b27608e8-b453-4397-8d41-7c3c3d9af293"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 8,
-                            Libelle = "Épée longue",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("d5c3180c-dc53-4a22-9983-029f419c3675"),
-                            ClasseId = new Guid("b27608e8-b453-4397-8d41-7c3c3d9af293"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Épée ou hache à 2 mains",
-                            NombreDeAttaque = 2
-                        },
-                        new
-                        {
-                            Id = new Guid("777d590e-1e13-45fe-91ff-0a422c049179"),
-                            ClasseId = new Guid("b27608e8-b453-4397-8d41-7c3c3d9af293"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Libelle = "Grand bouclier",
-                            ModificateurDef = 2
-                        },
-                        new
-                        {
-                            Id = new Guid("070a2afb-be78-439a-9f03-d55be60dc134"),
-                            ClasseId = new Guid("1a4b34b8-2752-4062-a0e5-59695a79d9c7"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Bâton",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("4ffa6680-d4c9-49c7-a29c-04b7c53560e9"),
-                            ClasseId = new Guid("1a4b34b8-2752-4062-a0e5-59695a79d9c7"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Libelle = "Grimoire"
-                        },
-                        new
-                        {
-                            Id = new Guid("f4c633bb-6ba5-4af7-b971-6700e7a9b5bc"),
-                            ClasseId = new Guid("1a4b34b8-2752-4062-a0e5-59695a79d9c7"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("a2fbf4a2-79c9-4a67-82e5-871e3f8db310"),
-                            ClasseId = new Guid("e6d9a3ba-1dcc-4e33-859f-615dbbf3717f"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Bâton ferré",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("61621a26-7c3e-48a2-84f3-d61a76442657"),
-                            ClasseId = new Guid("ded836b7-688e-4757-b100-1dc146142846"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("db9a9371-b414-4bb6-9263-aef7ef3377f1"),
-                            ClasseId = new Guid("ded836b7-688e-4757-b100-1dc146142846"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Bâton ferré",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("aa4f1bdb-8ba9-4030-a05a-573f468b5206"),
-                            ClasseId = new Guid("f5d228cd-75ee-4462-a2a7-102383250bdd"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Libelle = "Petit bouclier",
-                            ModificateurDef = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("307de95a-45fd-45d0-9e6d-00554ac8f63d"),
-                            ClasseId = new Guid("f5d228cd-75ee-4462-a2a7-102383250bdd"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Marteau ou masse de guerre",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("b97ec6da-26a1-45fa-af1a-278352a3216f"),
-                            ClasseId = new Guid("6e3fd8e2-1680-4a8b-b928-1e48acc20861"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 8,
-                            Libelle = "Épée longue",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("cdf4943d-fedf-4b6c-bdcd-e48756543cb3"),
-                            ClasseId = new Guid("6e3fd8e2-1680-4a8b-b928-1e48acc20861"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Arc court",
-                            NombreDeAttaque = 1,
-                            PorteEnM = 30
-                        },
-                        new
-                        {
-                            Id = new Guid("0fdf20f9-4279-4fe7-a73c-4ba7d4fdb5be"),
-                            ClasseId = new Guid("6e3fd8e2-1680-4a8b-b928-1e48acc20861"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague",
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("e2f5f54a-eb6e-4656-bf62-12fd17fd4a79"),
-                            ClasseId = new Guid("6e3fd8e2-1680-4a8b-b928-1e48acc20861"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Libelle = "Carquois"
-                        },
-                        new
-                        {
-                            Id = new Guid("cd0de432-6a9d-4eb3-b2b4-62834f8684fa"),
-                            ClasseId = new Guid("0441eff4-f2ca-4757-b02e-3e1043cf4234"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 4,
-                            Libelle = "Dague de jet",
-                            NombreDeAttaque = 1,
-                            PorteEnM = 5,
-                            Quantite = 5
-                        },
-                        new
-                        {
-                            Id = new Guid("94b9f9a9-bd23-46e5-863d-b3b5b63d1f6c"),
-                            ClasseId = new Guid("0441eff4-f2ca-4757-b02e-3e1043cf4234"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeAttaque = 6,
-                            Libelle = "Rapière",
-                            MinCritique = 19,
-                            NombreDeAttaque = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("be17ea3b-4132-468e-9bb4-b58ae3921e48"),
-                            ClasseId = new Guid("0441eff4-f2ca-4757-b02e-3e1043cf4234"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Libelle = "Outils de crochetage"
                         });
                 });
 
@@ -1618,7 +1318,7 @@ namespace MellmothJdr.DAL.Migrations
                     b.Property<int?>("MinCritique")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NombreDeSoin")
+                    b.Property<int?>("NumbreDeSoin")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1626,38 +1326,6 @@ namespace MellmothJdr.DAL.Migrations
                     b.HasIndex("ClasseId");
 
                     b.ToTable("SoinStart", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("efa42275-f8a6-4c3b-aba0-ec97c6de1a23"),
-                            ClasseId = new Guid("2048962d-f0d3-460b-a054-fae5ea578cc3"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeSoin = 8,
-                            Libelle = "Potion de soins",
-                            NombreDeSoin = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("9add0625-5c5f-461a-a2d7-72381ae57e07"),
-                            ClasseId = new Guid("1a4b34b8-2752-4062-a0e5-59695a79d9c7"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeSoin = 8,
-                            Libelle = "Potion de soins",
-                            NombreDeSoin = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("29224826-839b-4766-8326-34dedfcb59ce"),
-                            ClasseId = new Guid("ded836b7-688e-4757-b100-1dc146142846"),
-                            DateCrea = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateMaj = new DateTime(2025, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeSoin = 8,
-                            Libelle = "Potion de soins",
-                            NombreDeSoin = 1
-                        });
                 });
 
             modelBuilder.Entity("MellmothJdr.DAL.Entities.User", b =>

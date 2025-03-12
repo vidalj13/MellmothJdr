@@ -21,17 +21,6 @@ namespace MellmothJdr.DAL.Entities
         public List<JoinFichePersoChroniquesOubliesClasse> JoinFichePersoChroniquesOubliesClasses { get; set; }
         public List<VoieChroniquesOublies> VoieChroniquesOublies { get; set; }
         public List<ArmeStart> ArmesStarts { get; set; }
-    }
-
-    public class ArmeStart : BaseEntity
-    {
-        public string Libelle { get; set; }
-        public int? PorteEnM { get; set; }
-        public int? DeAttaque  { get; set; }
-        public int? NumbreDeAttaque { get; set; }
-        public int? MinCritique { get; set; }
-
-        public Guid ClasseId { get; set; }
-        public Classe Classe { get; set; }
+        public List<SoinStart> SoinsStarts { get; set; }
     }
 }
