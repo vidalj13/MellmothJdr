@@ -8,6 +8,37 @@ using Seedwork.EntityFramework.Extensions;
 
 namespace NotificationManager.Infrastructure.EntityConfigurations
 {
+    internal class SoinStartEntityConfiguration : IEntityTypeConfiguration<SoinStart>
+    {
+        public void Configure(EntityTypeBuilder<SoinStart> builder)
+        {
+            builder.ToTable("SoinStart");
+            builder.ConfigureBaseEntity();
+
+            builder.Property(x => x.Libelle)
+                .HasColumnType("varchar(200)");
+
+            builder.HasOne(x => x.Classe)
+                .WithMany(x => x.SoinsStarts)
+                .HasForeignKey(x => x.ClasseId);
+
+            DateTime dateInit = new(2025, 02, 25);
+            /*
+            builder.HasData(new List<SoinStart>() {
+                    new()
+                    {
+                        Libelle = "Pétoire",
+                        Id = new Guid("626B4CBC-24FD-4CF4-B0B8-6CE09644A9E1"),
+                        ClasseId = Ids.ChroniqueOublie.Classe.,
+                        DateCrea = dateInit,
+                        DateMaj = dateInit,
+                        DeSoin = 10,
+                        NumbreDeSoin = 1
+                    },
+            });
+            */
+        }
+    }
     internal class ArmeStartEntityConfiguration : IEntityTypeConfiguration<ArmeStart>
     {
         public void Configure(EntityTypeBuilder<ArmeStart> builder)
@@ -28,7 +59,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                     new()
                     {
                         Libelle = "Pétoire",
-                        Id = new Guid("626B4CBC-24FD-4CF4-B0B8-6CE09644A9E1\r\n"),
+                        Id = new Guid("626B4CBC-24FD-4CF4-B0B8-6CE09644A9E1"),
                         ClasseId = Ids.ChroniqueOublie.Classe.Arquebusier,
                         DateCrea = dateInit,
                         DateMaj = dateInit,
