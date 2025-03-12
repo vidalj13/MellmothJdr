@@ -15,10 +15,10 @@
                     <MudGrid>
                         <MudItem xs="12" sm="6">
                             <MudSelect T="Classe" Label="@Texte.Classe" MultiSelection="false" @bind-Value="ClasseSelected" @bind-Value:after="ApplySelectedCultureAsync" RequiredError="@string.Format(Texte.FormatIsRequired,Texte.Classe)"
-                                       AnchorOrigin="Origin.BottomCenter" >
+                                       AnchorOrigin="Origin.BottomCenter">
                                 @foreach (Classe classe in Classes)
                                 {
-                                    <MudSelectItem T="Classe" Tooltip="" Value="@classe" >
+                                    <MudSelectItem T="Classe" Tooltip="" Value="@classe">
                                         <CustomTooltipWithImage SrcImage="@($"img/classe/{classe.Id}.jpg")" Titre="@classe.Libelle" Description="@classe.Description" Arrow="true" Placement="Placement.Right" Width="500" />
                                     </MudSelectItem>
                                 }
@@ -29,7 +29,63 @@
             </MudPaper>
         </MudItem>
 
-    @if (Voies.Count != 0 )
+        @if (ClasseSelected != null)
+        {
+            <MudItem xs="12" sm="6">
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">@ClasseSelected.Libelle</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText>@ClasseSelected.Description</MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+            <MudItem xs="12" sm="6">
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Arme et armure</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText>@ClasseSelected.ArmeArmure</MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+            <MudItem xs="12" sm="12">
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Equipement de depart</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText>@ClasseSelected.ArmureStart +@ClasseSelected.ModificateurArmureStart</MudText>
+
+
+                        <MudTable Items="@ClasseSelected.ArmesStarts" Class="c-mt-15" Dense="true" Hover="true" Bordered="true" Striped="true">
+                            <HeaderContent>
+                                <MudTh>Arme</MudTh>
+                                <MudTh>Attaque</MudTh>
+                                <MudTh>Critique</MudTh>
+                                <MudTh>Porte</MudTh>
+                            </HeaderContent>
+                            <RowTemplate>
+                                <MudTd DataLabel="Arme">@context.Libelle</MudTd>
+                                <MudTd DataLabel="Attaque">@(context.DeAttaque.HasValue ? ((context.NumbreDeAttaque.HasValue ? $"{context.NumbreDeAttaque}" : "1") + "d" + context.DeAttaque) : "-")</MudTd>
+                                <MudTd DataLabel="Critique">@(context.MinCritique.HasValue ? ($"{context.MinCritique}-20") : "20")</MudTd>
+                                <MudTd DataLabel="Porte">@(context.PorteEnM.HasValue ? $"{context.PorteEnM}m" : "-")</MudTd>
+
+                            </RowTemplate>
+                        </MudTable>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        }
+        @if (Voies.Count != 0)
         {
             <MudItem xs="12" sm="12">
                 <MudPaper Class="pa-4 mt-4">

@@ -16,11 +16,16 @@ public class ClasseService : ServiceBase, IClasseService
     {
     }
 
-    public async Task<List<Classe>> GetClassesAsync(Guid gameId, CancellationToken none)
+    public async Task<List<Classe>> GetClassesAsync(Guid gameId, bool withStartArme, CancellationToken none)
     {
         using BddContexte contexte = GetScopedBddContexte();
-        List<Classe> classes = await contexte.Classes
-                                    .Where(x => x.JeuId == gameId)
+        IQueryable<Classe> query = contexte.Classes
+                                            .Where(x => x.JeuId == gameId);
+        if (withStartArme)
+        {
+            query = query.Include(x => x.ArmesStarts);
+        }
+        List<Classe> classes = await query
                                     .OrderBy(x => x.Libelle)
                                     .ToListAsync(none);
         return classes;

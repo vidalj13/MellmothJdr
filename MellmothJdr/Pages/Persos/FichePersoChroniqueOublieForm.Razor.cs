@@ -11,6 +11,7 @@ using MudBlazor;
 
 using NotificationManager.Infrastructure.Entities.Base;
 using MellmothJdr.BlazorBase.Pages;
+using MellmothJdr.Services.Dto;
 namespace MellmothJdr.Pages.Persos;
 
 public class FichePersoChroniqueOublieFormComponent : AuthenticatedPage
@@ -38,8 +39,8 @@ public class FichePersoChroniqueOublieFormComponent : AuthenticatedPage
 
     protected override async Task LoadAsync()
     {
+        Task<List<Classe>> taskClasses = GetScopedService<IClasseService>().GetClassesAsync(GameId, true, CancellationToken.None);
         Task<List<Race>> taskRaces = GetScopedService<IRaceService>().GetRacesAsync(GameId, CancellationToken.None);
-        Task<List<Classe>> taskClasses = GetScopedService<IClasseService>().GetClassesAsync(GameId, CancellationToken.None);
         Races = await taskRaces;
         Classes = await taskClasses;
     }
