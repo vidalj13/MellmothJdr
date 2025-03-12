@@ -74,11 +74,10 @@
                                 <MudTh>Porte</MudTh>
                             </HeaderContent>
                             <RowTemplate>
-                                <MudTd DataLabel="Arme">@context.Libelle</MudTd>
+                                <MudTd DataLabel="Arme">@(context.Quantite.HasValue ? context.Quantite : "1") @context.Libelle</MudTd>
                                 <MudTd DataLabel="Attaque">@(context.DeAttaque.HasValue ? ((context.NombreDeAttaque.HasValue ? $"{context.NombreDeAttaque}" : "1") + "d" + context.DeAttaque) : "-")</MudTd>
-                                <MudTd DataLabel="Critique">@(context.MinCritique.HasValue ? ($"{context.MinCritique}-20") : "20")</MudTd>
+                                <MudTd DataLabel="Critique">@(context.DeAttaque.HasValue ? (context.MinCritique.HasValue ? ($"{context.MinCritique}-20") : "20") :"-")</MudTd>
                                 <MudTd DataLabel="Porte">@(context.PorteEnM.HasValue ? $"{context.PorteEnM}m" : "-")</MudTd>
-
                             </RowTemplate>
                         </MudTable>
                     </MudCardContent>

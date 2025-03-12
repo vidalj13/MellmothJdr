@@ -80,12 +80,13 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         PorteEnM = null
                     },   new()
                     {
-                        Libelle = "2 javelots",
+                        Libelle = "Javelots",
                         Id = new Guid("739F46E1-8EF3-4F2A-926A-B5A04AD8D867"),
                         ClasseId = Ids.ChroniqueOublie.Classe.Barbare,
                         DateCrea = dateInit,
                         DateMaj = dateInit,
                         DeAttaque = 6,
+                        Quantite = 2,
                         NombreDeAttaque = 1,
                         PorteEnM = 20
                     },
@@ -394,6 +395,7 @@ namespace NotificationManager.Infrastructure.EntityConfigurations
                         Quantite = 5,
                         DeAttaque = 4,
                         NombreDeAttaque = 1,
+                        PorteEnM = 5
                     },
                     new()
                     {
