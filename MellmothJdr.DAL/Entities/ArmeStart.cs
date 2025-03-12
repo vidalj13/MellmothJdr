@@ -7,7 +7,9 @@ namespace MellmothJdr.DAL.Entities
         public string Libelle { get; set; }
         public int? PorteEnM { get; set; }
         public int? DeAttaque  { get; set; }
-        public int? NumbreDeAttaque { get; set; }
+        public int? Quantite { get; set; }
+        public int? ModificateurDef { get; set; }
+        public int? NombreDeAttaque { get; set; }
         public int? MinCritique { get; set; }
 
         public Guid ClasseId { get; set; }
